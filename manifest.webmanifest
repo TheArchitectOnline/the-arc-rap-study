@@ -1,0 +1,9 @@
+{
+  "name":"THE ARC Rap Study",
+  "short_name":"THE ARC",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#eee9df",
+  "theme_color":"#11100f",
+  "description":"Artist-led, AI-assisted vocal workflow."
+}
