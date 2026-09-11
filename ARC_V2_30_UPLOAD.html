@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#11100f">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="description" content="THE ARC Rap Study — artist-led, AI-assisted vocal workflow.">
+<title>THE ARC / RAP STUDY</title>
+<style>
+:root{
+ --paper:#eee9df;--paper2:#e6e0d4;--ink:#11100f;--ink2:#1a1817;--muted:#746f68;--line:#c9c1b5;
+ --red:#5a1723;--red2:#7a2432;--gold:#c39a4b;--gold2:#e1bf73;--white:#faf8f3;
+ --shadow:0 16px 42px rgba(17,16,15,.12);--radius:22px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
+button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:980px;margin:auto;padding:18px 16px 70px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 2px 18px}.wordmark{font-size:11px;letter-spacing:.28em;font-weight:800}.top-actions{display:flex;gap:8px}.iconbtn{width:40px;height:40px;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--ink);font-weight:800}.iconbtn:hover{border-color:var(--ink)}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:var(--white);border-radius:28px;padding:30px 28px 26px;box-shadow:var(--shadow)}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 92% 10%,rgba(195,154,75,.34),transparent 28%),linear-gradient(115deg,transparent 35%,rgba(90,23,35,.42) 100%);pointer-events:none}.hero>*{position:relative}
+.kicker{font-size:10px;letter-spacing:.27em;color:#cfc8bd;font-weight:800}.hero h1{margin:24px 0 12px;font-size:clamp(42px,8vw,72px);line-height:.92;letter-spacing:-.06em}.script{font-family:"Segoe Script","Brush Script MT",cursive;font-style:italic;font-weight:500;letter-spacing:-.04em}.hero .script{color:var(--gold2);font-size:clamp(36px,7vw,64px)}.hero-copy{max-width:680px;color:#c9c3bb;font-size:15px}.hero-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:22px}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(225,191,115,.35);border-radius:999px;padding:8px 12px;color:#e8d7ad;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 16px rgba(225,191,115,.45)}
+.intro{display:flex;justify-content:space-between;gap:20px;align-items:end;margin:26px 2px 12px}.intro h2{margin:0;font-size:13px;letter-spacing:.18em;text-transform:uppercase}.intro p{margin:4px 0 0;color:var(--muted);font-size:12px}.start{background:var(--red);color:#fff;border:0;border-radius:13px;padding:12px 16px;font-weight:800;box-shadow:0 8px 20px rgba(90,23,35,.18)}.start:hover{background:var(--red2)}
+.card{background:rgba(250,248,243,.88);border:1px solid var(--line);border-radius:var(--radius);padding:19px;margin-top:12px;box-shadow:0 7px 20px rgba(17,16,15,.055)}.card.dark{background:var(--ink);color:var(--white);border-color:var(--ink2)}.section-head{display:flex;justify-content:space-between;align-items:start;gap:15px;margin-bottom:16px}.eyebrow{font-size:10px;letter-spacing:.2em;font-weight:900;color:var(--red);text-transform:uppercase}.dark .eyebrow{color:var(--gold2)}h3{margin:4px 0 0;font-size:22px;letter-spacing:-.025em}.muted{color:var(--muted);font-size:12px}.dark .muted{color:#a9a39c}
+.project{display:grid;grid-template-columns:1fr auto auto;gap:9px}.project input{min-width:0;border:1px solid var(--line);background:var(--white);border-radius:12px;padding:13px;color:var(--ink);outline:none}.project input:focus{border-color:var(--red)}.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:12px;padding:12px 15px;font-weight:800}.btn.light{background:var(--white);color:var(--ink);border-color:var(--line)}.btn.red{background:var(--red);border-color:var(--red)}.btn.gold{background:var(--gold);border-color:var(--gold);color:#17130d}.btn:disabled{opacity:.42;cursor:not-allowed;filter:saturate(.55)}.btn:not(:disabled){transition:transform .12s ease,box-shadow .12s ease}.btn:not(:disabled):active{transform:translateY(1px)}#analyseBtn:not(:disabled){box-shadow:0 7px 18px rgba(90,23,35,.22)}#buildCard .build button:not(:disabled){background:var(--gold);border-color:var(--gold);color:#17130d;box-shadow:0 7px 18px rgba(195,154,75,.14)}
+.drop{border:1px dashed #aaa196;border-radius:17px;padding:24px;text-align:center;background:rgba(255,255,255,.35)}.drop b{display:block;font-size:15px;margin-bottom:4px}.drop span{font-size:11px;color:var(--muted)}input[type=file]{display:none}.recordrow{display:flex;align-items:center;gap:9px;margin-top:10px}.timer{font-variant-numeric:tabular-nums;font-weight:800;min-width:48px}.takes{display:grid;gap:8px;margin-top:12px}.take{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:11px;background:rgba(255,255,255,.35);font-size:12px}.take small{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.profile{border:1px solid var(--line);border-radius:16px;padding:15px;background:rgba(255,255,255,.32);text-align:left;color:var(--ink);cursor:pointer;transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease,background .12s ease}.profile:hover{border-color:var(--red)}.profile:active{transform:translateY(1px)}.profile strong{font-size:15px}.profile small{display:block;color:var(--muted);margin:3px 0 12px}.profileState{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:6px 9px;font-size:10px;font-weight:800;color:var(--muted)}.profile.active{border-color:var(--gold);background:rgba(195,154,75,.10);box-shadow:0 0 0 2px rgba(195,154,75,.14)}.profile.active .profileState{border-color:var(--gold);background:var(--gold);color:#17130d}
+.builds{display:grid;gap:8px}.build{min-height:70px}.build{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;border:1px solid #34302d;border-radius:15px;padding:15px;background:#151312}.build strong{font-size:15px}.build small{display:block;color:#9d9790;margin-top:3px}.build button{margin-top:9px}.audio{width:100%;margin-top:10px}.media-preview{width:100%;max-height:260px;border-radius:12px;margin-top:10px;background:#111;display:block}.take-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.candidate{align-items:flex-start}.candidate.selected{border-color:var(--gold);background:rgba(195,154,75,.10);box-shadow:0 0 0 2px rgba(195,154,75,.12)}.candidate-body{flex:1;min-width:0}.candidate-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.mini-btn{border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:10px;padding:8px 10px;font-size:11px;font-weight:800}.mini-btn.select{background:var(--red);border-color:var(--red);color:#fff}.mini-btn.selected{background:var(--gold);border-color:var(--gold);color:#17130d}.output{margin-top:12px;border:1px solid #4b4034;border-radius:14px;padding:12px;background:#11100f}.output h4{margin:0 0 5px;font-size:13px}.output p{margin:0;color:#aaa39b;font-size:11px}.output .audio{margin-top:9px}.grid-preview{margin-top:12px;border:1px solid var(--line);border-radius:14px;padding:13px;background:var(--white);display:none}.grid-preview.show{display:block}.grid-bars{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:9px}.grid-bars span{height:28px;border:1px solid var(--line);border-radius:6px;display:grid;place-items:center;font-size:9px;font-weight:800}.override-panel{display:none;margin-top:14px;border-top:1px solid #55333a;padding-top:14px}.override-panel.show{display:block}.override-row{display:grid;grid-template-columns:100px 1fr;gap:8px;align-items:center;margin-top:7px}.override-row select{width:100%;border:1px solid #55333a;background:#171313;color:#fff;border-radius:10px;padding:9px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.step{border:1px solid var(--line);border-radius:14px;padding:13px;background:var(--white);min-height:92px}.step b{display:block;font-size:10px;letter-spacing:.12em}.step span{display:block;margin-top:19px;font-size:12px;font-weight:700}
+.premium{background:linear-gradient(120deg,#151312 0%,#211619 58%,#32131c 100%);color:#fff;border:1px solid #4c2b30;position:relative;overflow:hidden}.premium:after{content:"";position:absolute;right:-80px;top:-90px;width:250px;height:250px;background:radial-gradient(circle,rgba(225,191,115,.24),transparent 66%)}.premium>*{position:relative}.premium h3{font-size:24px}.premium .copy{max-width:650px;color:#c9c2ba;font-size:13px}.premium-grid{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}.premium-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tag{border:1px solid #55333a;border-radius:999px;padding:7px 10px;font-size:10px;color:#e5d6bb}.choice{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tutorial[hidden]{display:none}.tutorial{position:fixed;inset:0;z-index:50;pointer-events:none}.tutorial .veil{position:absolute;inset:0;background:rgba(10,9,8,.16)}.guide{position:fixed;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(390px,calc(100vw - 24px));background:var(--white);color:var(--ink);border:1px solid #cfc5b7;border-radius:17px;padding:13px 14px;box-shadow:0 14px 38px rgba(0,0,0,.22);pointer-events:auto}.guide-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.guide .count{font-size:8px;letter-spacing:.18em;color:var(--red);font-weight:900}.guide h4{margin:3px 0 4px;font-size:16px;line-height:1.18}.guide p{margin:0;color:#5f5952;font-size:11px;line-height:1.4}.guide-actions{display:flex;justify-content:space-between;gap:8px;margin-top:10px}.guide-actions .right{display:flex;gap:6px}.guide .skip{background:transparent;border:0;color:#77716a;font-size:10px;font-weight:800;padding:8px 4px}.guide .next{background:var(--red);color:#fff;border:0;border-radius:10px;padding:9px 13px;font-weight:800}.guide .btn.light{padding:9px 12px;font-size:11px}.spot{position:absolute;border:2px solid var(--gold2);border-radius:13px;box-shadow:0 0 0 9999px rgba(10,9,8,.035),0 0 0 5px rgba(225,191,115,.11),0 8px 26px rgba(225,191,115,.08);pointer-events:none;transition:all .22s ease}
+.footer{padding:28px 3px 0;color:var(--muted);font-size:10px;text-align:center}.footer b{color:var(--ink)}
+@media(max-width:700px){.shell{padding:10px 12px 50px}.hero{padding:24px 20px;border-radius:22px}.hero h1{margin-top:20px}.project{grid-template-columns:1fr 1fr}.project input{grid-column:1/-1}.grid3,.steps{grid-template-columns:1fr}.premium-grid{grid-template-columns:1fr}.intro{align-items:start;flex-direction:column}.start{width:100%}.card{padding:16px;border-radius:18px}.build{grid-template-columns:1fr}.topbar{padding-bottom:10px}.tutorial .guide{bottom:max(12px,env(safe-area-inset-bottom));width:min(380px,calc(100vw - 20px))}}
+
+.mic-permission{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(15,12,12,.38);backdrop-filter:blur(3px);z-index:9999;padding:18px}.mic-permission.show{display:flex}.mic-card{width:min(430px,100%);background:#f4eee2;border:1px solid #171313;border-radius:18px;padding:22px;box-shadow:0 18px 55px rgba(0,0,0,.28)}.mic-card h3{margin:0 0 8px;font-size:21px}.mic-card p{margin:0 0 16px;line-height:1.45}.mic-actions{display:flex;gap:10px;flex-wrap:wrap}.mic-actions button{flex:1;min-width:120px}.mic-state{font-size:13px;font-weight:700;margin-top:12px}.mic-state.ready{color:#315f3b}.mic-state.off{color:#8b302f}.mic-help{font-size:12px;opacity:.75;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="mic-permission" id="micPermission" role="dialog" aria-modal="true" aria-labelledby="micPermissionTitle">
+  <div class="mic-card">
+    <h3 id="micPermissionTitle">🎙️ Mic check</h3>
+    <p id="micPermissionText">Alright, before we cook — I need permission to use your microphone for recording.</p>
+    <div class="mic-actions"><button class="btn red" id="micAllowBtn">Turn mic on</button><button class="btn light" id="micCancelBtn">Not now</button></div>
+    <div class="mic-state" id="micState">Microphone is waiting.</div>
+    <div class="mic-help">Your browser may show its own permission box next. Choose <b>Allow</b> if you want to record.</div>
+  </div>
+</div>
+<div class="shell">
+ <nav class="topbar"><div class="wordmark">THE ARC / RAP STUDY</div><div class="top-actions"><button class="iconbtn" id="startGuide" aria-label="Start guide">?</button><button class="iconbtn" id="resetGuide" aria-label="Replay guide">↻</button></div></nav>
+ <header class="hero">
+   <div class="kicker">ARTIST-LED · AI-ASSISTED · REAL VOCALS</div>
+   <h1><span class="script">Find the best.</span></h1>
+   <div class="hero-copy">Record it. Analyse it. Choose what stays. ARC builds from what you actually performed.</div>
+   <div class="hero-row"><div class="badge"><span class="dot"></span> Your voice stays yours</div><div class="badge">No pressure. Just better workflow.</div></div>
+ </header>
+ <div class="intro"><div><h2>First session</h2><p>I'll walk you through it. No stress — we'll get there.</p></div><button class="start" id="startGuide2">START HERE</button></div>
+ <section class="card" id="projectCard">
+   <div class="section-head"><div><div class="eyebrow">01 · Project</div><h3>Give it a name.</h3></div><div class="muted" id="saveState">Not saved yet</div></div>
+   <div class="project"><input id="projectName" value="Untitled ARC Project" aria-label="Project name"><button class="btn" id="saveBtn">Save</button><button class="btn light" id="newBtn">New</button></div>
+ </section>
+ <section class="card" id="recordCard">
+   <div class="section-head"><div><div class="eyebrow">02 · Record / Upload</div><h3>Give me something real.</h3></div><div class="muted">Your takes stay yours.</div></div>
+   <label class="drop" for="audioInput"><b>Drop your takes here</b><span>or tap to choose audio files</span></label><input id="audioInput" type="file" accept="audio/*,video/*" multiple>
+   <div class="recordrow"><button class="btn red" id="recordBtn">Record vocal</button><button class="btn light" id="recordVideoBtn">Record video</button><span class="timer" id="timer">00:00</span><span class="muted" id="recordStatus">Ready when you are.</span></div>
+   <div class="takes" id="takes"></div>
+ </section>
+ <section class="card" id="analyseCard">
+   <div class="section-head"><div><div class="eyebrow">03 · Analyse</div><h3>Let me dig through it.</h3></div><div class="muted" id="analysisState">Waiting for takes</div></div>
+   <div class="grid3" id="profileChoices">
+    <button class="profile active" type="button" data-profile="Clean"><strong>Clean</strong><small>clarity + stability</small><span class="profileState">Selected</span></button>
+    <button class="profile" type="button" data-profile="Hard"><strong>Hard</strong><small>energy + impact</small><span class="profileState">Choose</span></button>
+    <button class="profile" type="button" data-profile="Real"><strong>Real</strong><small>natural delivery</small><span class="profileState">Choose</span></button>
+   </div>
+   <button class="btn red" id="analyseBtn" disabled style="margin-top:12px">Analyse takes</button>
+ </section>
+ <section class="card" id="chooseCard">
+   <div class="section-head"><div><div class="eyebrow">04 · Choose</div><h3>Here's what stood out.</h3></div><div class="muted">You make the final call.</div></div>
+   <div id="candidates" class="takes"><div class="muted">Analyse your takes and I'll bring the strongest sections here.</div></div>
+ </section>
+ <section class="card dark" id="buildCard">
+   <div class="section-head"><div><div class="eyebrow">05 · Build</div><h3>Alright. Let's cook.</h3></div><div class="muted">Three ways to hear it.</div></div>
+   <div class="builds">
+    <div class="build"><div><strong>Clean</strong><small>clarity + stability</small></div><button class="btn light" disabled>Build Clean</button></div>
+    <div class="build"><div><strong>Hard</strong><small>energy + impact</small></div><button class="btn light" disabled>Build Hard</button></div>
+    <div class="build"><div><strong>Real</strong><small>natural delivery + character</small></div><button class="btn light" disabled>Build Real</button></div>
+   </div>
+ </section>
+ <section class="card" id="semanticCard">
+   <div class="section-head"><div><div class="eyebrow">06 · Semantic review</div><h3>Words first. Guessing never.</h3></div><div class="muted">Verified data only.</div></div>
+   <div class="takes"><div class="take"><div><b>Verified phrase comping</b><br><small>When timestamped word data is available, compare matching phrases across takes.</small></div><span class="tag" style="color:#5a1723;border-color:#c9c1b5">Ready when supplied</span></div></div>
+ </section>
+ <section class="card" id="beatCard">
+   <div class="section-head"><div><div class="eyebrow">07 · Beat-aware</div><h3>Then we put it in the pocket.</h3></div><div class="muted">Timing stays honest.</div></div>
+   <div class="project"><input id="bpmInput" value="125 BPM" aria-label="BPM"><select id="beatLength" aria-label="Section length" style="border:1px solid var(--line);background:var(--white);border-radius:12px;padding:12px"><option value="4">4 beats</option><option value="8" selected>8 beats</option></select><button class="btn light" id="previewGridBtn">Preview grid</button></div><div id="gridPreview" class="grid-preview"></div>
+ </section>
+ <section class="card premium" id="overrideCard">
+   <div class="premium-grid"><div><div class="eyebrow">08 · Premium · My version</div><h3>You want to swap a bit? Sweet.</h3><p class="copy">ARC can suggest the build. You can still say, “Nah, I want that take.” Pick a section, choose your take, keep moving.</p><div class="premium-list"><span class="tag">Intro</span><span class="tag">Verse 1</span><span class="tag">Hook</span><span class="tag">Verse 2</span><span class="tag">Outro</span></div></div><div class="choice"><button class="btn gold" id="openOverrides">Open overrides</button></div></div><div id="overridePanel" class="override-panel"><div class="muted" style="color:#c9c2ba">Pick a section, then choose which analysed take you want there. Nothing else changes.</div><div id="overrideRows"></div></div>
+ </section>
+ <section class="card" id="journeyCard">
+   <div class="section-head"><div><div class="eyebrow">The journey</div><h3>One thing at a time.</h3></div></div>
+   <div class="steps"><div class="step"><b>01</b><span>Bring your takes.</span></div><div class="step"><b>02</b><span>Find the strong bits.</span></div><div class="step"><b>03</b><span>Choose what stays.</span></div><div class="step"><b>04</b><span>Build your version.</span></div><div class="step"><b>05</b><span>Listen. Export. Done.</span></div></div>
+ </section>
+ <section class="card premium" id="premiumCard">
+   <div class="premium-grid"><div><div class="eyebrow">Optional · Premium</div><h3>More control. Less mucking around.</h3><p class="copy">You don't need Premium to make music here. It's simply there if you want a quicker workflow and a little more control.</p><div class="premium-list"><span class="tag">Section override</span><span class="tag">Restore ARC choice</span><span class="tag">Faster review</span><span class="tag">Artist-led builds</span></div></div><div class="choice"><button class="btn gold" id="premiumBtn">See Premium</button><button class="btn light" id="notNowBtn">Maybe later</button></div></div>
+ </section>
+ <footer class="footer"><b>You bring the performance. ARC finds the strongest version.</b><br>Built to support the artist, not replace them.</footer>
+</div>
+<div class="tutorial" id="tutorial" hidden>
+ <div class="veil"></div><div class="spot" id="spot"></div>
+ <div class="guide"><div class="guide-top"><div><div class="count" id="guideCount">START HERE · 01</div><h4 id="guideTitle">Yass! Okay, let's get cooking.</h4><p id="guideText">I'll show you around. Nothing complicated. We'll take it one step at a time.</p></div></div><div class="guide-actions"><button class="skip" id="skipGuide">Skip</button><div class="right"><button class="btn light" id="backGuide">Back</button><button class="next" id="nextGuide">Let's go</button></div></div></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const steps=[
+ {el:'projectCard',title:'Sweet. Give it a name.',text:'Chuck a name on the project so we know what we’re cooking.',button:'Next'},
+ {el:'recordCard',title:'Yass! Now give me your takes.',text:'Record it or throw your files in here. Don’t overthink it — give me something real.',button:'Next'},
+ {el:'analyseCard',title:'Alright, I’ve got this bit.',text:'I’ll dig through what you gave me and bring the strong stuff forward.',button:'Next'},
+ {el:'chooseCard',title:'Now this part is yours.',text:'I’ll show you what stood out. You decide what stays. Simple.',button:'Next'},
+ {el:'buildCard',title:'Ohhh, now we’re cooking.',text:'Pick the version you want to hear. Clean, Hard or Real.',button:'Next'},
+ {el:'premiumCard',title:'And this is completely up to you.',text:'Premium just gives you more control and a faster workflow. No tricks. No pressure. If it helps, beautiful. If not, keep cooking.',button:'Finish'},
+];
+let guideIndex=0;
+function positionSpot(){const s=steps[guideIndex],t=$(s.el),spot=$('spot');if(!t)return;const r=t.getBoundingClientRect();const pad=5;spot.style.left=(r.left-pad)+'px';spot.style.top=(r.top-pad)+'px';spot.style.width=(r.width+pad*2)+'px';spot.style.height=(Math.min(r.height,180)+pad*2)+'px'}
+function focusTarget(){const s=steps[guideIndex],t=$(s.el);if(!t)return;const r=t.getBoundingClientRect();if(r.top<90||r.bottom>window.innerHeight-210)t.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(positionSpot,240)}
+function renderGuide(){const s=steps[guideIndex];$('guideCount').textContent=`START HERE · ${String(guideIndex+1).padStart(2,'0')}`;$('guideTitle').textContent=s.title;$('guideText').textContent=s.text;$('nextGuide').textContent=s.button;$('backGuide').style.visibility=guideIndex?'visible':'hidden';positionSpot();focusTarget();}
+function openGuide(){guideIndex=0;$('tutorial').hidden=false;renderGuide()}
+function closeGuide(){ $('tutorial').hidden=true;localStorage.setItem('arcGuideSeen','1') }
+$('startGuide').onclick=openGuide;$('startGuide2').onclick=openGuide;$('resetGuide').onclick=openGuide;$('skipGuide').onclick=closeGuide;$('backGuide').onclick=()=>{if(guideIndex>0){guideIndex--;renderGuide()}};$('nextGuide').onclick=()=>{if(guideIndex<steps.length-1){guideIndex++;renderGuide()}else closeGuide()};window.addEventListener('resize',()=>{if(!$('tutorial').hidden)positionSpot()});
+if(!localStorage.getItem('arcGuideSeen')) setTimeout(openGuide,500);
+let takes=[];let recording=false,recorder=null,stream=null,started=0,timerHandle=null,recordMode='audio';
+function revokeUrl(t){if(t&&t.url)try{URL.revokeObjectURL(t.url)}catch(e){}}
+function mediaMarkup(t,i){const safe=escapeHtml(t.name);const preview=t.url?(t.mediaType==='video'?`<video class="media-preview" controls playsinline preload="metadata" src="${t.url}"></video>`:`<audio class="audio" controls preload="metadata" src="${t.url}"></audio>`):'';return `<div class="take"><div style="min-width:0"><b>${safe}</b><br><small>${escapeHtml(t.size||'ready to review')}${t.source==='recorded'?' · recorded':''}</small>${preview}</div><div class="take-actions">${t.url?'': '<span class="tag" style="color:#5a1723;border-color:#c9c1b5">Ready</span>'}</div></div>`}
+function renderTakes(){const box=$('takes');box.innerHTML=takes.length?takes.map(mediaMarkup).join(''):'<div class="muted">No takes yet. Throw something in.</div>'}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+$('audioInput').addEventListener('change',e=>{for(const f of Array.from(e.target.files||[])){const type=f.type.startsWith('video/')?'video':'audio';takes.push({name:f.name,size:(f.size/1048576).toFixed(1)+' MB',url:URL.createObjectURL(f),mediaType:type,source:'upload'})}renderTakes();updateReady();e.target.value=''});
+function updateReady(){const has=takes.length>0;$('analyseBtn').disabled=!has;$('analysisState').textContent=has?`${takes.length} take${takes.length>1?'s':''} ready`:'Waiting for takes'}
+
+// ARC acoustic analysis: the browser decodes the uploaded/recorded audio and measures the
+// actual signal. This is deliberately honest: it scores performance characteristics, not
+// lyrics or artistic meaning. Web Audio's decodeAudioData() gives us PCM samples we can inspect.
+async function decodeTakeAudio(t){
+  if(!t.url) throw new Error('No audio source');
+  const response=await fetch(t.url);
+  const bytes=await response.arrayBuffer();
+  const ctx=new (window.AudioContext||window.webkitAudioContext)();
+  try{return await ctx.decodeAudioData(bytes.slice(0));}finally{try{await ctx.close()}catch(e){}}
+}
+function percentile(sorted,p){if(!sorted.length)return 0;const i=(sorted.length-1)*p;const lo=Math.floor(i),hi=Math.ceil(i);return lo===hi?sorted[lo]:sorted[lo]+(sorted[hi]-sorted[lo])*(i-lo)}
+function measureBuffer(buffer){
+  const channels=[];for(let c=0;c<buffer.numberOfChannels;c++)channels.push(buffer.getChannelData(c));
+  const n=buffer.length, step=Math.max(1,Math.floor(n/120000));
+  let sum=0,peak=0,count=0,clipped=0;const levels=[];
+  for(let i=0;i<n;i+=step){let x=0;for(const ch of channels)x+=Math.abs(ch[i]||0);x/=channels.length;sum+=x*x;peak=Math.max(peak,x);if(x>=0.985)clipped++;count++;levels.push(x)}
+  const rms=Math.sqrt(sum/Math.max(1,count));
+  const sorted=levels.slice().sort((a,b)=>a-b);
+  const p10=percentile(sorted,.10),p50=percentile(sorted,.50),p90=percentile(sorted,.90);
+  const silence=levels.filter(x=>x<Math.max(.012,p90*.10)).length/Math.max(1,levels.length);
+  const dynamic=p90/Math.max(.0001,p10);
+  const crest=peak/Math.max(.0001,rms);
+  const energy=Math.min(1,rms/.18);
+  const headroom=Math.max(0,1-clipped/Math.max(1,count)*18);
+  return {duration:buffer.duration,rms,peak,p50,p90,silence,dynamic,crest,energy,headroom};
+}
+function profileScore(m,profile){
+  const dynamicNorm=Math.min(1,Math.log10(1+m.dynamic)/1.8);
+  const clean=Math.round(100*(.38*m.energy+.28*m.headroom+.20*(1-m.silence)+.14*(1-Math.min(1,Math.abs(m.crest-3)/3))));
+  const hard=Math.round(100*(.46*m.energy+.24*Math.min(1,m.crest/5)+.18*(1-m.silence)+.12*m.headroom));
+  const real=Math.round(100*(.30*m.energy+.30*dynamicNorm+.22*(1-m.silence)+.18*m.headroom));
+  return profile==='Hard'?hard:profile==='Real'?real:clean;
+}
+function fmtSec(v){const m=Math.floor(v/60),s=Math.floor(v%60);return `${m}:${String(s).padStart(2,'0')}`}
+function analysisLabel(score){return score>=82?'Strong':score>=68?'Good':'Review'}
+async function analyseOne(t,profile){
+  const buffer=await decodeTakeAudio(t);const m=measureBuffer(buffer);
+  // Find the strongest 8-second acoustic window in the take. This is a measured signal window,
+  // not a claim that ARC understands the words being rapped.
+  const win=Math.min(8,Math.max(2,buffer.duration));
+  const total=Math.max(1,Math.floor(buffer.duration*10));
+  let best={score:-1,start:0};
+  for(let k=0;k<total;k++){const start=Math.min(Math.max(0,buffer.duration-win),k/10);const end=Math.min(buffer.duration,start+win);
+    const from=Math.floor(start*buffer.sampleRate),to=Math.min(buffer.length,Math.floor(end*buffer.sampleRate));
+    let sum=0,pk=0,c=0;for(let i=from;i<to;i+=Math.max(1,Math.floor((to-from)/18000))){let x=0;for(let ch=0;ch<buffer.numberOfChannels;ch++)x+=Math.abs(buffer.getChannelData(ch)[i]||0);x/=buffer.numberOfChannels;sum+=x*x;pk=Math.max(pk,x);c++}
+    const r=Math.sqrt(sum/Math.max(1,c)),e=Math.min(1,r/.18),cr=pk/Math.max(.0001,r);
+    const sc=profile==='Hard'?(e*.60+Math.min(1,cr/5)*.25+(1-m.silence)*.15):profile==='Real'?(e*.40+Math.min(1,Math.log10(1+m.dynamic)/1.8)*.35+(1-m.silence)*.25):(e*.50+m.headroom*.30+(1-m.silence)*.20);
+    if(sc>best.score)best={score:sc,start};
+  }
+  return {...t,metrics:m,score:profileScore(m,profile),windowStart:best.start,windowDuration:win,windowScore:Math.round(best.score*100)};
+}
+let analysisResults=[];let selectedCandidateIndex=null;
+function renderCandidates(){
+  const box=$('candidates');
+  if(!analysisResults.length){box.innerHTML='<div class="muted">No analysed candidates yet.</div>';return}
+  box.innerHTML=analysisResults.map((t,i)=>{
+    const selected=selectedCandidateIndex===i;
+    const preview=t.url?(t.mediaType==='video'?`<video class="media-preview" controls playsinline preload="metadata" src="${t.url}"></video>`:`<audio class="audio" controls preload="metadata" src="${t.url}"></audio>`):'';
+    return `<div class="take candidate ${selected?'selected':''}" data-candidate="${i}"><div class="candidate-body"><b>${escapeHtml(t.name)}</b><br><small>#${i+1} · ${analysisLabel(t.score)} · ${t.score}/100 · strongest measured window ${fmtSec(t.windowStart)}–${fmtSec(t.windowStart+t.windowDuration)}</small><br><small>Energy ${Math.round(t.metrics.energy*100)}% · dynamics ${t.metrics.dynamic.toFixed(1)}× · silence ${Math.round(t.metrics.silence*100)}%</small>${preview}<div class="candidate-actions"><button class="mini-btn select" data-select="${i}">${selected?'Selected':'Select this take'}</button></div></div><span class="tag" style="color:#5a1723;border-color:#c9c1b5">Measured</span></div>`;
+  }).join('');
+  box.querySelectorAll('[data-select]').forEach(btn=>btn.onclick=()=>selectCandidate(Number(btn.dataset.select)));
+  document.querySelectorAll('#buildCard .build button').forEach(b=>b.disabled=selectedCandidateIndex===null);
+  updateOverrideRows();
+}
+function selectCandidate(i){
+  selectedCandidateIndex=i;
+  renderCandidates();
+  $('chooseCard').scrollIntoView({behavior:'smooth',block:'center'});
+  $('analysisState').textContent=`Take ${i+1} selected — your call.`;
+}
+function buildProfile(profile){
+  if(selectedCandidateIndex===null||!analysisResults[selectedCandidateIndex]){ $('buildOutput').innerHTML='<div class="output"><h4>Choose a take first.</h4><p>Pick one of the analysed takes above, then build the version you want.</p></div>'; return; }
+  const t=analysisResults[selectedCandidateIndex];
+  const preview=t.url?(t.mediaType==='video'?`<video class="media-preview" controls playsinline preload="metadata" src="${t.url}"></video>`:`<audio class="audio" controls preload="metadata" src="${t.url}"></audio>`):'';
+  $('buildOutput').innerHTML=`<div class="output"><h4>${escapeHtml(profile)} build ready</h4><p>Built from your selected take: <b>${escapeHtml(t.name)}</b>. This prototype preserves the original recording — no synthetic voice added.</p>${preview}<div style="margin-top:9px"><a class="mini-btn" style="display:inline-block;text-decoration:none" href="${t.url}" download="ARC_${profile}_${escapeHtml(t.name).replace(/[^a-z0-9._-]+/gi,'_')}">Save this build</a></div></div>`;
+  $('buildCard').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function updateOverrideRows(){
+  const box=$('overrideRows'); if(!box)return;
+  if(!analysisResults.length){box.innerHTML='<div class="muted" style="margin-top:9px;color:#aaa39b">Analyse takes first and your available takes will appear here.</div>';return;}
+  const opts=analysisResults.map((t,i)=>`<option value="${i}" ${i===selectedCandidateIndex?'selected':''}>Take ${i+1} — ${escapeHtml(t.name)}</option>`).join('');
+  box.innerHTML=['Intro','Verse 1','Hook','Verse 2','Outro'].map(section=>`<div class="override-row"><span class="tag">${section}</span><select data-section="${section}">${opts}</select></div>`).join('')+'<button class="btn gold" id="applyOverrides" style="margin-top:10px">Use these choices</button><div id="overrideStatus" class="muted" style="margin-top:8px;color:#c9c2ba"></div>';
+  $('applyOverrides').onclick=()=>{$('overrideStatus').textContent='Choices saved for this session. ARC will keep these section choices when the full comp engine is connected.'};
+}
+async function runRealAnalysis(){
+  if(!takes.length)return;
+  const profile=document.querySelector('#profileChoices .profile.active')?.dataset.profile||'Clean';
+  $('analysisState').textContent=`Let me listen properly — ${profile} profile…`;$('analyseBtn').disabled=true;
+  const results=[];const errors=[];
+  for(const t of takes){try{results.push(await analyseOne(t,profile))}catch(e){errors.push(t.name)}}
+  results.sort((a,b)=>b.score-a.score);
+  $('analysisState').textContent=results.length?`Analysis complete · ${results.length} take${results.length>1?'s':''} measured`:'Couldn’t decode these takes';
+  if(!results.length){$('candidates').innerHTML=`<div class="take"><div><b>I couldn't read the audio yet.</b><br><small>Try an audio/video file the browser can decode.</small></div></div>`;$('analyseBtn').disabled=false;return}
+  analysisResults=results.slice(0,5); selectedCandidateIndex=null; renderCandidates(); $('buildOutput').innerHTML=''; document.querySelectorAll('#buildCard .build button').forEach(b=>b.disabled=true); $('analyseBtn').disabled=false;
+  if(errors.length){$('candidates').insertAdjacentHTML('beforeend',`<div class="muted" style="margin-top:8px">${errors.length} take${errors.length>1?'s':''} could not be decoded and was skipped.</div>`)}
+}
+
+async function requestMicPermission(mode){
+  const box=$('micPermission'); const state=$('micState'); const text=$('micPermissionText');
+  text.textContent=mode==='video'?'Alright, before we roll — I need permission to use your microphone and camera for video.':'Alright, before we cook — I need permission to use your microphone for recording.';
+  state.textContent='Microphone is waiting.'; state.className='mic-state'; box.classList.add('show');
+  return new Promise(resolve=>{
+    const cleanup=()=>{box.classList.remove('show');$('micAllowBtn').onclick=null;$('micCancelBtn').onclick=null};
+    $('micCancelBtn').onclick=()=>{cleanup();resolve(false)};
+    $('micAllowBtn').onclick=async()=>{
+      try{
+        state.textContent=mode==='video'?'Asking for mic + camera…':'Asking for microphone…';
+        const constraints=mode==='video'?{audio:true,video:{facingMode:'user'}}:{audio:true};
+        const test=await navigator.mediaDevices.getUserMedia(constraints);
+        test.getTracks().forEach(t=>t.stop());
+        state.textContent='Yep — permission granted. Let’s go.'; state.className='mic-state ready';
+        setTimeout(()=>{cleanup();resolve(true)},350);
+      }catch(e){
+        state.textContent=e&&e.name==='NotAllowedError'?'No worries — the mic is blocked. Tap Allow in your browser/site settings, then try again.':'I couldn’t access the mic yet. Check your browser permissions and try again.';
+        state.className='mic-state off';
+      }
+    };
+  });
+}
+async function startRecording(mode){if(recording)return;recordMode=mode;
+  if(!window.isSecureContext){$('recordStatus').textContent='Nearly there — the mic needs ARC to be opened from a secure web address (https).';return}
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){$('recordStatus').textContent='This browser can’t access the microphone here. Try opening ARC from a secure site.';return}
+  const ok=await requestMicPermission(mode); if(!ok){$('recordStatus').textContent='All good — mic is off. You can upload instead.';return}
+  try{const constraints=mode==='video'?{audio:true,video:{facingMode:'user'}}:{audio:true};stream=await navigator.mediaDevices.getUserMedia(constraints);let options={};if(MediaRecorder.isTypeSupported(mode==='video'?'video/webm;codecs=vp9,opus':'audio/webm;codecs=opus'))options.mimeType=mode==='video'?'video/webm;codecs=vp9,opus':'audio/webm;codecs=opus';recorder=new MediaRecorder(stream,options);const chunks=[];recorder.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(chunks,{type:recorder.mimeType|| (mode==='video'?'video/webm':'audio/webm')});const url=URL.createObjectURL(blob);const num=takes.length+1;takes.push({name:mode==='video'?`ARC Video ${num}`:`ARC Vocal ${num}`,size:(blob.size/1024).toFixed(0)+' KB',url,mediaType:mode,source:'recorded'});renderTakes();updateReady();$('recordStatus').textContent=mode==='video'?'Got it. Video is right there.':'Got it. Nice one.';if(mode==='video'){const vids=document.querySelectorAll('#takes video');const v=vids[vids.length-1];if(v)v.play().catch(()=>{})}};recorder.start(250);recording=true;started=Date.now();$('recordBtn').textContent='Stop vocal';$('recordVideoBtn').textContent='Stop video';$('recordStatus').textContent=mode==='video'?'I’m watching…':'I’m listening…';timerHandle=setInterval(()=>{let sec=Math.floor((Date.now()-started)/1000);$('timer').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')},250)}catch(e){$('recordStatus').textContent=mode==='video'?'Camera/mic permission is off — check browser permissions and try again.':'Mic permission is off — check browser permissions and try again.'}}
+function stopRecording(){if(!recording||!recorder)return;recorder.stop();if(stream)stream.getTracks().forEach(t=>t.stop());recording=false;clearInterval(timerHandle);timerHandle=null;$('recordBtn').textContent='Record vocal';$('recordVideoBtn').textContent='Record video';$('timer').textContent='00:00'}
+$('recordBtn').onclick=()=>recording?(recordMode==='audio'?stopRecording():null):startRecording('audio');
+$('recordVideoBtn').onclick=()=>recording?(recordMode==='video'?stopRecording():null):startRecording('video');
+$('analyseBtn').onclick=runRealAnalysis;
+document.querySelectorAll('#profileChoices .profile').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('#profileChoices .profile').forEach(b=>{b.classList.remove('active');b.querySelector('.profileState').textContent='Choose'});btn.classList.add('active');btn.querySelector('.profileState').textContent='Selected';$('analysisState').textContent=`${btn.dataset.profile} selected`;}));
+document.querySelectorAll('#buildCard .build button').forEach(b=>b.addEventListener('click',()=>buildProfile(b.dataset.build||b.textContent.replace('Build ','').trim())));
+$('previewGridBtn').onclick=()=>{
+  const raw=parseFloat(($('bpmInput').value||'').replace(/[^0-9.]/g,'')); const bpm=Number.isFinite(raw)&&raw>0?raw:125; const beats=Number($('beatLength').value)||8; const beatSec=60/bpm;
+  $('gridPreview').innerHTML=`<b>${bpm} BPM · ${beats} beats</b><div class="muted">One beat = ${beatSec.toFixed(3)} seconds. This is a timing reference only — it does not alter the recording.</div><div class="grid-bars">${Array.from({length:beats},(_,i)=>`<span>${i+1}</span>`).join('')}</div>`; $('gridPreview').classList.add('show');
+};
+$('openOverrides').onclick=()=>{$('overridePanel').classList.toggle('show');updateOverrideRows();$('overridePanel').scrollIntoView({behavior:'smooth',block:'center'})};
+$('saveBtn').onclick=()=>{$('saveState').textContent='Saved just now';localStorage.setItem('arcProjectName',$('projectName').value)};$('newBtn').onclick=()=>{$('projectName').value='Untitled ARC Project';$('saveState').textContent='Not saved yet'};const saved=localStorage.getItem('arcProjectName');if(saved)$('projectName').value=saved;
+$('premiumBtn').onclick=()=>alert('Premium is optional. The core ARC workflow stays available without it.');$('notNowBtn').onclick=()=>alert('Sweet. Keep cooking. Premium will still be here if you ever want it.');
+</script>
+<script>
+if('serviceWorker' in navigator && window.isSecureContext){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+</script>
+</body></html>
