@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#11100f">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="description" content="THE ARC Rap Study — artist-led, AI-assisted vocal workflow.">
+<title>THE ARC / RAP STUDY · V2.52 HTTPS BEAT TEST</title>
+<style>
+:root{--paper:#eee9df;--paper2:#e4ddd1;--ink:#0e0d0c;--ink2:#171514;--muted:#746d65;--line:#c8bfb3;--red:#5a1723;--red2:#7c2636;--gold:#c49a4b;--gold2:#ead08d;--white:#fbf9f4;--shadow:0 20px 55px rgba(16,13,12,.14);--radius:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#fffaf1 0,#eee9df 42%,#e6dfd3 100%);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1080px;margin:auto;padding:18px 18px 72px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:7px 3px 18px}.wordmark{font-size:10px;letter-spacing:.32em;font-weight:900}.top-actions{display:flex;gap:8px}.iconbtn{width:40px;height:40px;border:1px solid var(--line);border-radius:13px;background:rgba(251,249,244,.65);color:var(--ink);font-weight:900}.iconbtn:hover{border-color:var(--red)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0b0a0a 0%,#121010 62%,#211216 100%);color:var(--white);border-radius:30px;padding:38px 34px 32px;box-shadow:0 25px 70px rgba(12,9,8,.25);border:1px solid #2d2524}.hero:before{content:"";position:absolute;inset:-1px;background:radial-gradient(circle at 86% 18%,rgba(196,154,75,.22),transparent 24%),radial-gradient(circle at 18% 100%,rgba(90,23,35,.42),transparent 35%);pointer-events:none}.hero:after{content:"";position:absolute;inset:14px;border:1px solid rgba(196,154,75,.15);border-radius:23px;pointer-events:none}.hero>*{position:relative}.kicker{font-size:9px;letter-spacing:.28em;color:#cfc8bd;font-weight:900}.hero h1{margin:22px 0 13px;line-height:.82;letter-spacing:-.055em;display:flex;flex-direction:column;align-items:flex-start}.arc-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,10vw,100px);font-weight:900;letter-spacing:-.075em;color:#f8f2e7;position:relative;text-shadow:0 2px 0 #111,0 0 22px rgba(225,191,115,.10);-webkit-text-stroke:1px rgba(90,23,35,.92)}.arc-title:before{content:"";position:absolute;inset:-8px -13px -4px -9px;border:2px solid rgba(90,23,35,.92);border-radius:13px;transform:translate(5px,5px);filter:drop-shadow(0 0 9px rgba(122,36,50,.35));z-index:-1}.arc-title:after{content:"";position:absolute;left:6%;right:-3%;bottom:-10px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.8}.script{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:500;letter-spacing:-.045em}.hero .script{color:var(--gold2);font-size:clamp(31px,5.5vw,57px);margin-top:15px;text-shadow:0 0 20px rgba(225,191,115,.22)}.hero-copy{max-width:700px;color:#c9c3bb;font-size:14px;margin-top:4px}.hero-row{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:22px}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(225,191,115,.32);border-radius:999px;padding:8px 12px;color:#e8d7ad;font-size:9px;letter-spacing:.13em;text-transform:uppercase;background:rgba(255,255,255,.025)}.dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 18px rgba(225,191,115,.6)}
+.intro{display:flex;justify-content:space-between;gap:20px;align-items:end;margin:28px 2px 14px}.intro h2{margin:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase}.intro p{margin:4px 0 0;color:var(--muted);font-size:12px}.start{background:var(--red);color:#fff;border:0;border-radius:13px;padding:12px 17px;font-weight:900;box-shadow:0 10px 24px rgba(90,23,35,.20)}.start:hover{background:var(--red2)}
+.card{background:rgba(251,249,244,.82);border:1px solid rgba(200,191,179,.95);border-radius:var(--radius);padding:22px;margin-top:14px;box-shadow:0 8px 28px rgba(17,16,15,.055);backdrop-filter:blur(5px)}.card.dark{background:linear-gradient(145deg,#0f0e0d,#171314 70%,#241418);color:var(--white);border-color:#29201f;box-shadow:0 18px 45px rgba(15,12,11,.18)}.section-head{display:flex;justify-content:space-between;align-items:start;gap:15px;margin-bottom:17px}.eyebrow{font-size:9px;letter-spacing:.23em;font-weight:900;color:var(--red);text-transform:uppercase}.dark .eyebrow{color:var(--gold2)}h3{margin:5px 0 0;font-size:clamp(21px,3vw,27px);letter-spacing:-.035em}.muted{color:var(--muted);font-size:11px}.dark .muted{color:#aaa39b}
+.project{display:grid;grid-template-columns:1fr auto auto;gap:9px}.project input{min-width:0;border:1px solid var(--line);background:var(--white);border-radius:13px;padding:13px;color:var(--ink);outline:none}.project input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(90,23,35,.08)}.btn{border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:13px;padding:12px 15px;font-weight:900;letter-spacing:-.01em}.btn.light{background:var(--white);color:var(--ink);border-color:var(--line)}.btn.red{background:var(--red);border-color:var(--red)}.btn.gold{background:var(--gold);border-color:var(--gold);color:#17130d}.btn:disabled{opacity:.4;cursor:not-allowed;filter:saturate(.5)}.btn:not(:disabled){transition:transform .12s ease,box-shadow .12s ease}.btn:not(:disabled):hover{box-shadow:0 9px 22px rgba(17,16,15,.12)}.btn:not(:disabled):active{transform:translateY(1px)}#analyseBtn:not(:disabled){box-shadow:0 9px 24px rgba(90,23,35,.24)}
+.drop{border:1px dashed #a99f93;border-radius:19px;padding:25px 20px;text-align:center;background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(228,221,209,.28));display:block}.drop:hover{border-color:var(--red);background:rgba(255,255,255,.68)}.drop-inner{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}.drop b{font-size:14px}.drop span{font-size:10px;color:var(--muted)}.drop-mark{display:grid!important;place-items:center;width:28px;height:28px;border-radius:9px;background:var(--red);color:#fff!important;font-size:17px!important;font-weight:800}.recordrow{display:flex;align-items:center;gap:9px;margin-top:11px;flex-wrap:wrap}.timer{font-variant-numeric:tabular-nums;font-weight:900;min-width:48px}.takes{display:grid;gap:9px;margin-top:13px}.take{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,.48);font-size:12px}.take small{color:var(--muted)}.take-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.analysis-intro{text-align:center;padding:8px 8px 17px}.analysis-intro h4{margin:0;font-size:clamp(18px,3vw,24px);letter-spacing:-.025em}.analysis-intro p{max-width:680px;margin:6px auto 0;color:var(--muted);font-size:11px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.profile{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:17px;padding:16px;background:rgba(255,255,255,.4);text-align:left;color:var(--ink);cursor:pointer;transition:transform .12s ease,border-color .12s ease,box-shadow .12s ease,background .12s ease}.profile:after{content:"";position:absolute;inset:auto -25px -40px auto;width:100px;height:100px;background:radial-gradient(circle,rgba(196,154,75,.13),transparent 68%);pointer-events:none}.profile:hover{border-color:var(--red);transform:translateY(-1px)}.profile strong{font-size:14px;letter-spacing:.04em}.profile small{display:block;color:var(--muted);margin:5px 0 13px;font-size:10px}.profileState{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:6px 9px;font-size:9px;font-weight:900;color:var(--muted)}.profile.active{border-color:var(--gold);background:linear-gradient(145deg,rgba(196,154,75,.12),rgba(255,255,255,.48));box-shadow:0 0 0 2px rgba(196,154,75,.14),0 10px 24px rgba(17,16,15,.06)}.profile.active .profileState{border-color:var(--gold);background:var(--gold);color:#17130d}.profile.beast{border-color:#7b4b53;background:linear-gradient(145deg,#191113,#2a171c);color:#fff}.profile.beast small{color:#c9bdb8}.profile.beast .profileState{color:#ead6aa;border-color:#79545b}.profile.beast.active{border-color:var(--gold);box-shadow:0 0 0 2px rgba(196,154,75,.2),0 0 32px rgba(196,154,75,.13)}
+.candidate{align-items:flex-start}.candidate.selected{border-color:var(--gold);background:rgba(196,154,75,.10);box-shadow:0 0 0 2px rgba(196,154,75,.12)}.candidate-body{flex:1;min-width:0}.candidate-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}.mini-btn{border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:10px;padding:8px 10px;font-size:10px;font-weight:900}.mini-btn.select{background:var(--red);border-color:var(--red);color:#fff}.mini-btn.selected{background:var(--gold);border-color:var(--gold);color:#17130d}.audio{width:100%;margin-top:10px}.media-preview{width:100%;max-height:260px;border-radius:12px;margin-top:10px;background:#111;display:block}.result-hero{position:relative;overflow:hidden;text-align:center;padding:19px 15px;margin-bottom:12px;border:1px solid rgba(196,154,75,.35);border-radius:18px;background:radial-gradient(circle at 50% 0,rgba(196,154,75,.16),transparent 50%),linear-gradient(145deg,#171312,#25161b);color:#fff1d1;box-shadow:0 0 30px rgba(196,154,75,.07)}.result-hero:after{content:"";position:absolute;inset:8px;border:1px solid rgba(225,191,115,.12);border-radius:13px;pointer-events:none}.result-hero h4{margin:0;font-size:clamp(19px,3vw,26px);letter-spacing:-.025em}.result-hero p{max-width:680px;margin:6px auto 9px;color:#cfc5ba;font-size:11px}.result-pill{display:inline-block;border:1px solid rgba(225,191,115,.38);border-radius:999px;padding:6px 10px;font-size:8px;letter-spacing:.16em;font-weight:900}
+.builds{display:grid;gap:9px}.build{min-height:70px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;border:1px solid #332b29;border-radius:16px;padding:15px;background:rgba(255,255,255,.025)}.build strong{font-size:15px}.build small{display:block;color:#9d9790;margin-top:3px;font-size:10px}.build button{margin-top:0}.beast-build{border-color:#76505a;background:linear-gradient(120deg,#191113,#27151b)}.beast-build .tag{margin-left:5px}.output{margin-top:12px;border:1px solid #4b4034;border-radius:15px;padding:13px;background:#11100f}.output h4{margin:0 0 5px;font-size:13px}.output p{margin:0;color:#aaa39b;font-size:11px}.output .audio{margin-top:9px}.master-card{border:1px solid #b89445;background:radial-gradient(circle at 50% 0,rgba(196,154,75,.17),transparent 48%),linear-gradient(145deg,#171313,#2a1a1e);color:#fff1d1;border-radius:17px;padding:16px;box-shadow:0 0 34px rgba(196,154,75,.11)}.master-card h4{margin:0;font-size:19px}.master-card p{color:#cfc5ba;font-size:11px}.master-card .mini-btn{background:#c39a4b;color:#17130d;border-color:#c39a4b}
+.grid-preview{margin-top:12px;border:1px solid var(--line);border-radius:15px;padding:13px;background:var(--white);display:none}.grid-preview.show{display:block}.grid-bars{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:9px}.grid-bars span{height:28px;border:1px solid var(--line);border-radius:6px;display:grid;place-items:center;font-size:9px;font-weight:800}.override-panel{display:none;margin-top:14px;border-top:1px solid #55333a;padding-top:14px}.override-panel.show{display:block}.override-row{display:grid;grid-template-columns:100px 1fr;gap:8px;align-items:center;margin-top:7px}.override-row select{width:100%;border:1px solid #55333a;background:#171313;color:#fff;border-radius:10px;padding:9px}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.step{border:1px solid var(--line);border-radius:14px;padding:13px;background:var(--white);min-height:92px}.step b{display:block;font-size:10px;letter-spacing:.12em}.step span{display:block;margin-top:19px;font-size:12px;font-weight:700}
+.premium{background:linear-gradient(120deg,#11100f 0%,#211519 58%,#35151e 100%);color:#fff;border:1px solid #4c2b30;position:relative;overflow:hidden}.premium:after{content:"";position:absolute;right:-80px;top:-90px;width:250px;height:250px;background:radial-gradient(circle,rgba(225,191,115,.23),transparent 66%)}.premium>*{position:relative}.premium h3{font-size:24px}.premium .copy{max-width:650px;color:#c9c2ba;font-size:12px}.premium-grid{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}.premium-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tag{border:1px solid #55333a;border-radius:999px;padding:7px 10px;font-size:9px;color:#e5d6bb}.choice{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.save-confirm{display:none;margin-top:9px;border:1px solid #cbbda9;border-radius:10px;padding:9px 11px;background:rgba(255,255,255,.5);font-size:11px}.save-confirm.show{display:block}.save-confirm b{font-weight:900}.next-hint{font-size:10px;color:var(--muted);margin-top:9px}.next-hint b{color:var(--ink)}.footer{text-align:center;padding:28px 8px 0;color:var(--muted);font-size:11px}.footer b{display:block;color:var(--ink);font-size:12px;margin-bottom:3px}
+.tutorial[hidden]{display:none}.tutorial{position:fixed;inset:0;z-index:50;pointer-events:none}.tutorial .veil{position:absolute;inset:0;background:rgba(10,9,8,.16)}.guide{z-index:52;position:fixed;left:12px;top:12px;bottom:auto;transform:none;width:min(390px,calc(100vw - 24px));background:var(--white);color:var(--ink);border:1px solid #cfc5b7;border-radius:17px;padding:13px 14px;box-shadow:0 14px 38px rgba(0,0,0,.22);pointer-events:auto}.guide-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.guide .count{font-size:8px;letter-spacing:.18em;color:var(--red);font-weight:900}.guide h4{margin:3px 0 4px;font-size:16px;line-height:1.18}.guide p{margin:0;color:#5f5952;font-size:11px;line-height:1.4}.guide-actions{display:flex;justify-content:space-between;gap:8px;margin-top:10px}.guide-actions .right{display:flex;gap:6px}.guide .skip{background:transparent;border:0;color:var(--muted);font-size:10px;font-weight:800}.guide .next{border:0;background:var(--red);color:#fff;border-radius:10px;padding:9px 12px;font-weight:900}.spot{position:fixed;z-index:51;border:2px solid var(--gold);border-radius:16px;box-shadow:0 0 0 9999px rgba(8,7,6,.10),0 0 28px rgba(225,191,115,.28);pointer-events:none;transition:all .22s ease}
+.mic-permission{position:fixed;inset:0;z-index:100;background:rgba(8,7,6,.54);display:none;align-items:center;justify-content:center;padding:18px}.mic-card{width:min(420px,100%);background:var(--white);border:1px solid #cfc5b7;border-radius:20px;padding:20px;box-shadow:0 25px 70px rgba(0,0,0,.35)}.mic-card h3{margin-top:0}.mic-card p{color:var(--muted);font-size:12px}.mic-actions{display:flex;gap:8px;flex-wrap:wrap}.mic-state{margin-top:10px;font-size:11px;font-weight:800}.mic-help{margin-top:8px;color:var(--muted);font-size:10px}
+.beat-drawer{margin-top:9px;border:1px solid #4b4034;border-radius:16px;background:linear-gradient(145deg,#171413,#211619);color:#fff;overflow:hidden}.beat-drawer summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 15px}.beat-drawer summary::-webkit-details-marker{display:none}.beat-drawer summary>span:first-child{min-width:0}.beat-drawer .fold-kicker{display:block;color:#ead08d;font-size:9px;letter-spacing:.22em;font-weight:900;margin-bottom:4px}.beat-drawer .fold-title{display:block;font-size:14px;font-weight:900}.beat-drawer .fold-sub{display:block;color:#9d9790;font-size:10px;margin-top:4px}.beat-drawer[open] summary{border-bottom:1px solid #332b29}.beat-drawer .beat-compact{padding:14px 15px}.beat-drawer .beat-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.beat-drawer .beat-mix-controls{margin-top:9px}.beat-drawer .grid-preview{margin-top:9px}.beat-drawer .beat-build{margin-top:10px;padding-top:10px;border-top:1px solid #332b29}.beat-drawer .btn{margin:0}@media(max-width:820px){.grid4{grid-template-columns:1fr 1fr}.hero{padding:32px 25px 27px}.project{grid-template-columns:1fr auto auto}.premium-grid{grid-template-columns:1fr}.choice{margin-top:2px}}
+@media(max-width:560px){.shell{padding:12px 11px 58px}.topbar{padding-bottom:12px}.hero{border-radius:23px;padding:28px 20px 23px}.hero:after{inset:10px;border-radius:17px}.arc-title{font-size:clamp(49px,17vw,76px)}.hero .script{font-size:clamp(29px,9vw,44px)}.hero-copy{font-size:13px}.intro{align-items:stretch;flex-direction:column;gap:11px}.start{align-self:flex-start}.card{padding:17px;border-radius:20px}.section-head{flex-direction:column;gap:5px}.section-head>.muted{align-self:flex-start}.project{grid-template-columns:1fr 1fr}.project input{grid-column:1/-1}.recordrow .timer{margin-left:2px}.grid4{grid-template-columns:1fr 1fr}.profile{padding:14px}.profile strong{font-size:13px}.build{grid-template-columns:1fr}.build button{justify-self:start}.premium h3{font-size:21px}.grid-bars{grid-template-columns:repeat(4,1fr)}}
+
+.comp-plan{margin-top:10px;border:1px solid rgba(196,154,75,.28);border-radius:13px;padding:10px;background:rgba(255,255,255,.035)}
+.comp-plan>b{display:block;color:#ead08d;font-size:11px;letter-spacing:.12em}.comp-plan>small{display:block;color:#aaa39b;font-size:10px;margin:4px 0 8px}.comp-row{display:grid;grid-template-columns:72px 1fr auto;gap:8px;align-items:center;border-top:1px solid #2d2725;padding:7px 0;font-size:10px}.comp-row span{color:#aaa39b}.comp-row strong{color:#f8f2e7;font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.master-card{margin-top:10px;border:1px solid rgba(196,154,75,.42);border-radius:17px;padding:15px;background:radial-gradient(circle at 50% 0,rgba(196,154,75,.12),transparent 55%),linear-gradient(145deg,#171312,#25161b);color:#fff1d1;box-shadow:0 0 30px rgba(196,154,75,.08)}.master-card h4{margin:0;font-size:20px}.master-card p{color:#cfc5ba;font-size:11px}.master-card .mini-btn{background:var(--gold);border-color:var(--gold);color:#17130d}.master-card .audio{margin-top:8px}@media(max-width:600px){.comp-row{grid-template-columns:62px 1fr}.comp-row span:last-child{grid-column:2}}
+.fold{border:1px solid var(--line);border-radius:18px;background:rgba(251,249,244,.72);overflow:hidden;margin-top:14px}.fold>summary{list-style:none;cursor:pointer;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:900}.fold>summary::-webkit-details-marker{display:none}.fold>summary:after{content:"+";font-size:22px;color:var(--red);line-height:1}.fold[open]>summary{border-bottom:1px solid var(--line)}.fold[open]>summary:after{content:"−"}.fold-body{padding:0 18px 18px}.fold-kicker{font-size:9px;letter-spacing:.22em;color:var(--red);text-transform:uppercase;display:block;margin-bottom:3px}.fold-title{font-size:16px;letter-spacing:-.02em;display:block}.fold-sub{font-size:10px;color:var(--muted);font-weight:500;display:block;margin-top:2px}.dark .fold{background:rgba(255,255,255,.025);border-color:#3a302e}.dark .fold>summary{color:#fff}.dark .fold>summary:after{color:var(--gold2)}@media(max-width:560px){.fold>summary{padding:14px 15px}.fold-body{padding:0 15px 15px}}.beat-compact{margin-top:14px;border:1px solid #4b4034;border-radius:16px;padding:14px;background:linear-gradient(145deg,rgba(196,154,75,.07),rgba(255,255,255,.02))}.beat-compact-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.beat-compact-head strong{display:block;font-size:14px}.beat-compact-head small{display:block;color:#9d9790;margin-top:4px;font-size:10px}.beat-tools{display:grid;grid-template-columns:auto 1fr auto;gap:9px;align-items:center;margin-top:11px}.beat-control{display:flex;align-items:center;gap:7px}.beat-control label{font-size:10px;font-weight:900;color:#9d9790}.beat-control input{width:100%;border:1px solid #4b4034;background:#11100f;color:#fff;border-radius:12px;padding:11px}.beat-mix-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.beat-mix-controls label{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font-size:10px;font-weight:900;color:#c9c2ba;border:1px solid #3d3532;border-radius:12px;padding:9px 10px}.beat-mix-controls input{width:100%}.beat-mix-controls output{font-variant-numeric:tabular-nums;color:#ead6aa;min-width:38px;text-align:right}.beat-build{margin-top:10px;padding:12px;border:1px solid rgba(201,161,73,.45);border-radius:14px;background:rgba(201,161,73,.06)}.beat-build b{font-size:13px}.beat-build p{margin:5px 0 9px}.beat-compact .grid-preview{margin-top:10px}.beat-compact .eyebrow{margin-bottom:3px}@media(max-width:560px){.beat-tools{grid-template-columns:1fr 1fr}.beat-tools label{grid-column:1/-1;justify-self:start}.beat-tools .beat-control{grid-column:1/-1}.beat-tools #previewGridBtn{justify-self:start}.beat-mix-controls{grid-template-columns:1fr}.beat-compact-head{flex-direction:column}.beat-compact-head>.muted{align-self:flex-start}}
+
+/* V2.48 · compact precision layout */
+.card{padding:16px;margin-top:10px;border-radius:18px}
+.section-head{margin-bottom:11px;align-items:center}
+.section-head h3{font-size:clamp(18px,2.7vw,23px)}
+.grid4{gap:7px}.profile{padding:11px 12px;border-radius:13px}.profile small{margin:3px 0 8px}.profileState{padding:4px 7px}
+.takes{gap:6px;margin-top:9px}.take{padding:9px 10px;border-radius:11px}.candidate-actions{margin-top:6px;gap:5px}.mini-btn{padding:6px 8px;border-radius:8px}
+#chooseCard{border-radius:14px}
+.fold>summary{padding:11px 14px}.fold-title{font-size:14px}.fold-sub{font-size:9px}.fold-body{padding:0 14px 12px}
+#buildCard{padding:14px}.builds{gap:5px}.build{min-height:0;grid-template-columns:1fr auto;gap:8px;padding:9px 11px;border-radius:11px}.build strong{font-size:13px}.build small{margin-top:1px;font-size:9px}.build .btn{padding:8px 10px;border-radius:9px;font-size:10px}
+.beat-drawer{margin-top:6px;border-radius:11px}.beat-drawer summary{padding:10px 11px}.beat-drawer .fold-title{font-size:13px}.beat-drawer .fold-sub{margin-top:2px}.beat-drawer .beat-compact{margin-top:0;padding:10px 11px}.beat-tools{margin-top:8px;gap:6px}.beat-mix-controls{gap:6px;margin-top:7px}.beat-mix-controls label{padding:7px 8px;border-radius:9px}.beat-build{margin-top:7px;padding:9px;border-radius:10px}
+.result-hero{padding:11px 12px;margin-bottom:7px;border-radius:12px}.result-hero h4{font-size:17px}.result-hero p{margin:3px auto 5px;font-size:9px}.result-pill{padding:4px 7px}
+.comp-plan{margin-top:7px;border-radius:10px;padding:8px}.comp-plan>b{font-size:9px}.comp-plan>small{font-size:8px;margin:2px 0 4px}.comp-row{grid-template-columns:58px 1fr auto;gap:6px;padding:5px 0;font-size:9px}.comp-row strong{font-size:9px}
+.master-card{margin-top:7px;border-radius:12px;padding:10px}.master-card h4{font-size:16px}.master-card p{font-size:9px;margin:3px 0}.master-card .audio{margin-top:5px}.master-card .mini-btn{padding:6px 8px}
+.output{margin-top:7px;padding:9px;border-radius:10px}.output h4{font-size:11px;margin-bottom:3px}.output p{font-size:9px}.output .audio{margin-top:5px}
+.next-hint{margin-top:7px;font-size:9px}
+.premium-grid{gap:10px}.premium-list{gap:5px}.tag{padding:5px 7px;font-size:8px}
+@media(max-width:560px){.card{padding:13px;border-radius:16px}.section-head{margin-bottom:9px}.grid4{gap:5px}.profile{padding:10px}.profile strong{font-size:12px}.build{grid-template-columns:1fr auto}.build button{justify-self:auto}.comp-row{grid-template-columns:54px 1fr}.comp-row span:last-child{grid-column:auto}.beat-tools{grid-template-columns:1fr 1fr}.beat-tools label{grid-column:1/-1}.beat-tools .beat-control{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="mic-permission" id="micPermission" role="dialog" aria-modal="true" aria-labelledby="micPermissionTitle">
+  <div class="mic-card">
+    <h3 id="micPermissionTitle">🎙️ Mic check</h3>
+    <p id="micPermissionText">Alright, before we cook — I need permission to use your microphone for recording.</p>
+    <div class="mic-actions"><button class="btn red" id="micAllowBtn">Turn mic on</button><button class="btn light" id="micCancelBtn">Not now</button></div>
+    <div class="mic-state" id="micState">Microphone is waiting.</div>
+    <div class="mic-help">Your browser may show its own permission box next. Choose <b>Allow</b> if you want to record.</div>
+  </div>
+</div>
+<div class="shell">
+ <nav class="topbar"><div class="wordmark">THE ARC / RAP STUDY</div><div class="top-actions"><button class="iconbtn" id="startGuide" aria-label="Start guide">?</button><button class="iconbtn" id="resetGuide" aria-label="Replay guide">↻</button></div></nav>
+ <header class="hero">
+   <div class="kicker">ARTIST-LED · AI-ASSISTED · REAL VOCALS</div>
+   <h1><span class="arc-title">THE ARC</span><span class="script">Find the best.</span></h1>
+   <div class="hero-copy">Record it. Analyse it. Choose what stays. ARC builds from what you actually performed.</div>
+   <div class="hero-row"><div class="badge"><span class="dot"></span> Your voice stays yours</div><div class="badge">No pressure. Just better workflow.</div></div>
+ </header>
+ <div class="intro"><div><h2>First session</h2><p>I'll walk you through it. No stress — we'll get there.</p></div><button class="start" id="startGuide2">START HERE</button></div>
+ <section class="card" id="projectCard">
+   <div class="section-head"><div><div class="eyebrow">01 · Project</div><h3>Give it a name.</h3></div><div class="muted" id="saveState">Not saved yet</div></div>
+   <div class="project"><input id="projectName" value="Untitled ARC Project" aria-label="Project name"><button class="btn" id="saveBtn">Save</button><button class="btn light" id="newBtn">New</button></div><div class="save-confirm" id="saveConfirm"><b>Saved.</b> Your project name is saved on this device. Keep going, brother. 👊🏾</div>
+ </section>
+ <section class="card" id="recordCard">
+   <div class="section-head"><div><div class="eyebrow">02 · Record / Upload</div><h3>Give me something real.</h3></div><div class="muted">Your takes stay yours.</div></div>
+   <label class="drop" for="audioInput"><span class="drop-inner"><span class="drop-mark">＋</span><b>Add your takes</b><span>Tap here to choose audio or video · or use Record Vocal / Record Video</span></span></label><input id="audioInput" type="file" accept="audio/*,video/*" multiple>
+   <div class="recordrow"><button class="btn red" id="recordBtn">Record vocal</button><button class="btn light" id="recordVideoBtn">Record video</button><span class="timer" id="timer">00:00</span><span class="muted" id="recordStatus">Ready when you are.</span></div>
+   <div class="takes" id="takes"></div>
+ </section>
+ <section class="card" id="analyseCard">
+   <div class="section-head"><div><div class="eyebrow">03 · Analyse</div><h3>Let me dig through it.</h3></div><div class="muted" id="analysisState">Waiting for takes</div></div>
+   <div class="analysis-intro"><h4>WHAT ARE WE LOOKING FOR? 🤔</h4><p>Pick one direction — or go Premium and let me look across all three for one master vision. You can also add multiple takes to the build pool.</p></div>
+   <div class="grid4" id="profileChoices">
+    <button class="profile active" type="button" data-profile="Clean"><strong>CLEAN</strong><small>clarity + stability</small><span class="profileState">Selected</span></button>
+    <button class="profile" type="button" data-profile="Hard"><strong>HARD</strong><small>energy + impact</small><span class="profileState">Choose</span></button>
+    <button class="profile" type="button" data-profile="Real"><strong>REAL</strong><small>natural delivery</small><span class="profileState">Choose</span></button>
+    <button class="profile beast" type="button" data-profile="Beast"><strong>🐺 BEAST MODE</strong><small>Clean + Hard + Real · one master vision</small><span class="profileState">Premium</span></button>
+   </div>
+   <button class="btn red" id="analyseBtn" disabled style="margin-top:12px">Analyse takes</button>
+   <div class="next-hint">🎯 <b>One analysis pass.</b> I measure your takes once, then use that information for the direction you choose.</div>
+ </section>
+ <section class="card" id="chooseCard" style="padding:0;overflow:hidden">
+   <details class="fold" id="chooseFold">
+    <summary><span><span class="fold-kicker">04 · Choose</span><span class="fold-title">Here’s what stood out. 🎯</span><span class="fold-sub">Open it when you want to pick takes. Close it when you’re done.</span></span><span class="muted">Your call.</span></summary>
+    <div class="fold-body"><div id="candidates" class="takes"><div class="muted">Analyse your takes and I’ll bring the strongest sections here.</div></div></div>
+   </details>
+ </section>
+ <section class="card dark" id="buildCard">
+   <div class="section-head"><div><div class="eyebrow">05 · Build</div><h3>RIGHT, LET'S COOK. 🔥</h3></div><div class="muted">One master at a time.</div></div>
+   <div class="builds">
+    <div class="build"><div><strong>Clean</strong><small>clarity + stability</small></div><button class="btn light" disabled data-build="Clean">Build Clean</button></div>
+    <div class="build"><div><strong>Hard</strong><small>energy + impact</small></div><button class="btn light" disabled data-build="Hard">Build Hard</button></div>
+    <div class="build"><div><strong>Real</strong><small>natural delivery + character</small></div><button class="btn light" disabled data-build="Real">Build Real</button></div>
+    <div class="build beast-build"><div><strong>🐺 Beast Mode <span class="tag">Premium</span></strong><small>Clean + Hard + Real → one master vision · one master, not three tracks</small></div><button class="btn gold" disabled data-build="Beast">Build Master</button></div>
+   </div>
+   <details class="beat-drawer" id="beatCard">
+    <summary><span><span class="fold-kicker">🥁 BEAT</span><span class="fold-title">Put the vocal over your instrumental.</span><span class="fold-sub">Optional. Open this when you have a beat.</span></span><span class="muted" id="beatSummaryState">No beat loaded</span></summary>
+    <div class="beat-compact">
+    <div class="beat-compact-head"><div><div class="eyebrow">🥁 BEAT</div><strong>Put the vocal over your instrumental.</strong><small>Optional. Build your vocal master first, then add the beat here.</small></div><span id="instrumentalState" class="muted">No beat loaded</span></div>
+    <div class="beat-tools">
+      <label class="btn light" for="instrumentalInput" style="cursor:pointer">Upload instrumental</label><input id="instrumentalInput" type="file" accept="audio/*" hidden>
+      <div class="beat-control"><label for="bpmInput">BPM</label><input id="bpmInput" value="125" inputmode="decimal" aria-label="BPM"></div>
+      <button class="btn light" id="previewGridBtn">Preview grid</button>
+    </div>
+    <div class="beat-mix-controls">
+      <label>Vocal <input id="vocalGainInput" type="range" min="0" max="1.5" step="0.01" value="1"><output id="vocalGainOut">100%</output></label>
+      <label>Beat <input id="beatGainInput" type="range" min="0" max="1" step="0.01" value="0.45"><output id="beatGainOut">45%</output></label>
+    </div>
+    <div id="gridPreview" class="grid-preview"></div>
+    <div id="beatActionArea"></div>
+    </div>
+   </details>
+   <div class="next-hint">🎯 <b>Build first.</b> Add a beat only when you want the full track.</div><div id="buildOutput"></div>
+ </section>
+ <section class="card" id="semanticCard">
+   <div class="section-head"><div><div class="eyebrow">06 · Semantic review</div><h3>Words first. Guessing never.</h3></div><div class="muted">Verified data only.</div></div>
+   <div class="takes"><div class="take"><div><b>Verified phrase comping</b><br><small>When timestamped word data is available, compare matching phrases across takes.</small></div><span class="tag" style="color:#5a1723;border-color:#c9c1b5">Ready when supplied</span></div></div>
+ </section>
+ <section class="card premium" id="overrideCard">
+   <div class="premium-grid"><div><div class="eyebrow">08 · Premium · My version</div><h3>You want to swap a bit? Sweet.</h3><p class="copy">ARC can suggest the build. You can still say, “Nah, I want that take.” Pick a section, choose your take, keep moving.</p><div class="premium-list"><span class="tag">Intro</span><span class="tag">Verse 1</span><span class="tag">Hook</span><span class="tag">Verse 2</span><span class="tag">Outro</span></div></div><div class="choice"><button class="btn gold" id="openOverrides">Open overrides</button></div></div><div id="overridePanel" class="override-panel"><div class="muted" style="color:#c9c2ba">Pick a section, then choose which analysed take you want there. Nothing else changes.</div><div id="overrideRows"></div><div id="customBuildArea" style="margin-top:12px"></div></div>
+ </section>
+ <section class="card premium" id="premiumCard">
+   <div class="premium-grid"><div><div class="eyebrow">Optional · Premium</div><h3>More control. Less mucking around.</h3><p class="copy">You don't need Premium to make music here. It's simply there if you want a quicker workflow and a little more control.</p><div class="premium-list"><span class="tag">🐺 Beast Mode</span><span class="tag">Section override</span><span class="tag">Restore ARC choice</span><span class="tag">Artist-led builds</span></div></div><div class="choice"><button class="btn gold" id="premiumBtn">See Premium</button><button class="btn light" id="notNowBtn">Maybe later</button></div></div>
+ </section>
+ <footer class="footer"><b>More control. Less mucking around.</b><br>You bring the performance. I find the strongest version.</footer>
+</div>
+<div class="tutorial" id="tutorial" hidden>
+ <div class="veil"></div><div class="spot" id="spot"></div>
+ <div class="guide" id="guide"><div class="guide-top"><div><div class="count" id="guideCount">START HERE · 01</div><h4 id="guideTitle">Yass! Okay, let's get cooking.</h4><p id="guideText">I'll show you around. Nothing complicated. We'll take it one step at a time.</p></div></div><div class="guide-actions"><button class="skip" id="skipGuide">Skip</button><div class="right"><button class="btn light" id="backGuide">Back</button><button class="next" id="nextGuide">Let's go</button></div></div></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const steps=[
+ {el:'projectCard',title:'🤔 01 · PROJECT',text:'Start here. Give your project a name, then tap Save. I’ll show you when it’s locked in.',button:'Next'},
+ {el:'recordCard',title:'🫵🏾 02 · GIVE ME SOMETHING REAL',text:'This is your recording station. Record a vocal, record video, or add your existing takes here.',button:'Next'},
+ {el:'analyseCard',title:'🎯 03 · ANALYSE',text:'Choose what we’re looking for — Clean, Hard, Real, or Premium Beast Mode — then I’ll do my thing.',button:'Next'},
+ {el:'chooseCard',title:'❤️‍🔥 04 · HERE’S WHAT STOOD OUT',text:'This is a pop-down review tray. Open it, listen, pick the takes you want, then close it and keep moving.',button:'Next'},
+ {el:'buildCard',title:'🔥 05 · RIGHT, LET’S COOK',text:'This is where I actually build it. Standard composes the strongest measured sections for one direction. Premium Beast Mode combines Clean + Hard + Real into one master vision.',button:'Next'},
+ {el:'semanticCard',title:'🧠 06 · CHECK THE WORDS',text:'When semantic tools are available, this is where ARC can verify the actual words and sections instead of guessing.',button:'Next'},
+ {el:'beatCard',title:'🎯 07 · LOCK TO THE BEAT',text:'Use beat-aware timing when you want the performance aligned to the musical grid.',button:'Next'},
+ {el:'premiumCard',title:'🫵🏾 08 · YOUR CALL',text:'Premium is optional. It adds Beast Mode and artist-led section overrides when you want to go deeper.',button:'Finish'},
+];
+let guideIndex=0,guideScrollTimer=null;
+function placeTour(){
+ const s=steps[guideIndex],t=$(s.el),spot=$('spot'),guide=$('guide'); if(!t||!spot||!guide)return;
+ const r=t.getBoundingClientRect(),pad=7;
+ spot.style.left=Math.max(5,r.left-pad)+'px'; spot.style.top=Math.max(5,r.top-pad)+'px'; spot.style.width=Math.min(window.innerWidth-10,r.width+pad*2)+'px'; spot.style.height=Math.min(r.height+pad*2,260)+'px';
+ const gw=Math.min(390,window.innerWidth-24),gh=guide.offsetHeight||150,gap=12;
+ let left=Math.min(Math.max(12,r.left),window.innerWidth-gw-12);
+ let top=r.bottom+gap;
+ if(top+gh>window.innerHeight-10) top=r.top-gh-gap;
+ if(top<10) top=10;
+ guide.style.width=gw+'px'; guide.style.left=left+'px'; guide.style.top=top+'px'; guide.style.bottom='auto'; guide.style.transform='none';
+}
+function focusTarget(){
+ const s=steps[guideIndex],t=$(s.el); if(!t)return;
+ const headerOffset=86;
+ const r=t.getBoundingClientRect();
+ const viewportBottom=window.innerHeight-150;
+ const needsScroll=r.top<headerOffset||r.bottom>viewportBottom;
+ if(needsScroll){
+   const absoluteTop=window.scrollY+r.top-headerOffset-14;
+   window.scrollTo({top:Math.max(0,absoluteTop),behavior:'smooth'});
+   clearTimeout(guideScrollTimer);
+   guideScrollTimer=setTimeout(placeTour,500);
+ } else {
+   placeTour();
+ }
+}
+
+function renderGuide(){
+ const s=steps[guideIndex];
+ $('guideCount').textContent=`START HERE · ${String(guideIndex+1).padStart(2,'0')}`;
+ $('guideTitle').textContent=s.title; $('guideText').textContent=s.text; $('nextGuide').textContent=s.button; $('backGuide').style.visibility=guideIndex?'visible':'hidden';
+ requestAnimationFrame(()=>focusTarget());
+}
+function openGuide(){guideIndex=0;$('tutorial').hidden=false;renderGuide()}
+function closeGuide(){ $('tutorial').hidden=true;localStorage.setItem('arcGuideSeen','1') }
+$('startGuide').onclick=openGuide;$('startGuide2').onclick=openGuide;$('resetGuide').onclick=openGuide;$('skipGuide').onclick=closeGuide;
+$('backGuide').onclick=()=>{if(guideIndex>0){guideIndex--;renderGuide()}};
+$('nextGuide').onclick=()=>{if(guideIndex<steps.length-1){guideIndex++;renderGuide()}else closeGuide()};
+window.addEventListener('resize',()=>{if(!$('tutorial').hidden)placeTour()}); window.addEventListener('scroll',()=>{if(!$('tutorial').hidden)placeTour()},{passive:true});
+if(!localStorage.getItem('arcGuideSeen')) setTimeout(openGuide,500);
+let takes=[];let recording=false,recorder=null,stream=null,started=0,timerHandle=null,recordMode='audio';
+let instrumentalFile=null,instrumentalBuffer=null,latestVocalBlob=null,latestVocalLabel='ARC MASTER';
+function revokeUrl(t){if(t&&t.url)try{URL.revokeObjectURL(t.url)}catch(e){}}
+function mediaMarkup(t,i){const safe=escapeHtml(t.name);const preview=t.url?(t.mediaType==='video'?`<video class="media-preview" controls playsinline preload="metadata" src="${t.url}"></video>`:`<audio class="audio" controls preload="metadata" src="${t.url}"></audio>`):'';return `<div class="take"><div style="min-width:0"><b>${safe}</b><br><small>${escapeHtml(t.size||'ready to review')}${t.source==='recorded'?' · recorded':''}</small>${preview}</div><div class="take-actions"><button class="delete-btn" data-delete="${i}" type="button">Delete</button></div></div>`}
+function renderTakes(){const box=$('takes');box.innerHTML=takes.length?takes.map(mediaMarkup).join(''):'<div class="muted">No takes yet. Throw something in.</div>';box.querySelectorAll('[data-delete]').forEach(btn=>btn.onclick=()=>deleteTake(Number(btn.dataset.delete)))}
+function deleteTake(i){if(!takes[i])return;revokeUrl(takes[i]);takes.splice(i,1);analysisResults=[];selectedCandidateIndex=null;$('buildOutput').innerHTML='';$('candidates').innerHTML='<div class="muted">Add takes, then analyse them and I’ll bring the strong stuff forward.</div>';document.querySelectorAll('#buildCard .build button').forEach(b=>b.disabled=true);renderTakes();updateReady();$('analysisState').textContent=takes.length?`${takes.length} take${takes.length>1?'s':''} ready`:'Waiting for takes'}
+function escapeHtml(s){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+$('audioInput').addEventListener('change',e=>{for(const f of Array.from(e.target.files||[])){const type=f.type.startsWith('video/')?'video':'audio';takes.push({name:f.name,size:(f.size/1048576).toFixed(1)+' MB',url:URL.createObjectURL(f),mediaType:type,source:'upload'})}renderTakes();updateReady();e.target.value=''});
+function updateReady(){const has=takes.length>0;$('analyseBtn').disabled=!has;$('analysisState').textContent=has?`${takes.length} take${takes.length>1?'s':''} ready`:'Waiting for takes'}
+
+// ARC acoustic analysis: the browser decodes the uploaded/recorded audio and measures the
+// actual signal. This is deliberately honest: it scores performance characteristics, not
+// lyrics or artistic meaning. Web Audio's decodeAudioData() gives us PCM samples we can inspect.
+async function decodeTakeAudio(t){
+  if(!t.url) throw new Error('No audio source');
+  const response=await fetch(t.url);
+  const bytes=await response.arrayBuffer();
+  const ctx=new (window.AudioContext||window.webkitAudioContext)();
+  try{return await ctx.decodeAudioData(bytes.slice(0));}finally{try{await ctx.close()}catch(e){}}
+}
+function percentile(sorted,p){if(!sorted.length)return 0;const i=(sorted.length-1)*p;const lo=Math.floor(i),hi=Math.ceil(i);return lo===hi?sorted[lo]:sorted[lo]+(sorted[hi]-sorted[lo])*(i-lo)}
+function measureBuffer(buffer){
+  const channels=[];for(let c=0;c<buffer.numberOfChannels;c++)channels.push(buffer.getChannelData(c));
+  const n=buffer.length, step=Math.max(1,Math.floor(n/120000));
+  let sum=0,peak=0,count=0,clipped=0;const levels=[];
+  for(let i=0;i<n;i+=step){let x=0;for(const ch of channels)x+=Math.abs(ch[i]||0);x/=channels.length;sum+=x*x;peak=Math.max(peak,x);if(x>=0.985)clipped++;count++;levels.push(x)}
+  const rms=Math.sqrt(sum/Math.max(1,count));
+  const sorted=levels.slice().sort((a,b)=>a-b);
+  const p10=percentile(sorted,.10),p50=percentile(sorted,.50),p90=percentile(sorted,.90);
+  const silence=levels.filter(x=>x<Math.max(.012,p90*.10)).length/Math.max(1,levels.length);
+  const dynamic=p90/Math.max(.0001,p10);
+  const crest=peak/Math.max(.0001,rms);
+  const energy=Math.min(1,rms/.18);
+  const headroom=Math.max(0,1-clipped/Math.max(1,count)*18);
+  return {duration:buffer.duration,rms,peak,p50,p90,silence,dynamic,crest,energy,headroom};
+}
+function profileScore(m,profile){
+  const dynamicNorm=Math.min(1,Math.log10(1+m.dynamic)/1.8);
+  const clean=Math.round(100*(.38*m.energy+.28*m.headroom+.20*(1-m.silence)+.14*(1-Math.min(1,Math.abs(m.crest-3)/3))));
+  const hard=Math.round(100*(.46*m.energy+.24*Math.min(1,m.crest/5)+.18*(1-m.silence)+.12*m.headroom));
+  const real=Math.round(100*(.30*m.energy+.30*dynamicNorm+.22*(1-m.silence)+.18*m.headroom));
+  return profile==='Hard'?hard:profile==='Real'?real:clean;
+}
+function fmtSec(v){const m=Math.floor(v/60),s=Math.floor(v%60);return `${m}:${String(s).padStart(2,'0')}`}
+function analysisLabel(score){return score>=82?'Strong':score>=68?'Good':'Review'}
+async function analyseOne(t,profile){
+  const buffer=await decodeTakeAudio(t);const m=measureBuffer(buffer);
+  // Find the strongest 8-second acoustic window in the take. This is a measured signal window,
+  // not a claim that ARC understands the words being rapped.
+  const win=Math.min(8,Math.max(2,buffer.duration));
+  const total=Math.max(1,Math.floor(buffer.duration*10));
+  let best={score:-1,start:0};
+  for(let k=0;k<total;k++){const start=Math.min(Math.max(0,buffer.duration-win),k/10);const end=Math.min(buffer.duration,start+win);
+    const from=Math.floor(start*buffer.sampleRate),to=Math.min(buffer.length,Math.floor(end*buffer.sampleRate));
+    let sum=0,pk=0,c=0;for(let i=from;i<to;i+=Math.max(1,Math.floor((to-from)/18000))){let x=0;for(let ch=0;ch<buffer.numberOfChannels;ch++)x+=Math.abs(buffer.getChannelData(ch)[i]||0);x/=buffer.numberOfChannels;sum+=x*x;pk=Math.max(pk,x);c++}
+    const r=Math.sqrt(sum/Math.max(1,c)),e=Math.min(1,r/.18),cr=pk/Math.max(.0001,r);
+    const sc=profile==='Hard'?(e*.60+Math.min(1,cr/5)*.25+(1-m.silence)*.15):profile==='Real'?(e*.40+Math.min(1,Math.log10(1+m.dynamic)/1.8)*.35+(1-m.silence)*.25):(e*.50+m.headroom*.30+(1-m.silence)*.20);
+    if(sc>best.score)best={score:sc,start};
+  }
+  const profileScores={Clean:profileScore(m,'Clean'),Hard:profileScore(m,'Hard'),Real:profileScore(m,'Real')}; const beast=Math.round((profileScores.Clean+profileScores.Hard+profileScores.Real)/3); return {...t,metrics:m,score:profile==='Beast'?beast:profileScores[profile],profileScores,beastScore:beast,windowStart:best.start,windowDuration:win,windowScore:Math.round(best.score*100)};
+}
+let analysisResults=[];
+let selectedCandidateIndex=null;
+let selectedCandidateIndices=new Set();
+let compSections=[];
+let decodedBuffers={};
+
+function clamp01(x){return Math.max(0,Math.min(1,x))}
+function segmentMetrics(buffer,start,dur){
+  const sr=buffer.sampleRate, from=Math.max(0,Math.floor(start*sr)), to=Math.min(buffer.length,Math.floor((start+dur)*sr));
+  if(to<=from) return {energy:0,headroom:0,silence:1,dynamic:0,crest:0,rms:0};
+  const chans=[];for(let c=0;c<buffer.numberOfChannels;c++)chans.push(buffer.getChannelData(c));
+  const step=Math.max(1,Math.floor((to-from)/18000));let sum=0,peak=0,count=0,active=0,silent=0,levels=[];
+  for(let i=from;i<to;i+=step){let x=0;for(const ch of chans)x+=Math.abs(ch[i]||0);x/=chans.length;sum+=x*x;active+=x;peak=Math.max(peak,x);count++;levels.push(x)}
+  const rms=Math.sqrt(sum/Math.max(1,count)); const sorted=levels.slice().sort((a,b)=>a-b); const p10=percentile(sorted,.10),p90=percentile(sorted,.90);
+  const threshold=Math.max(.012,p90*.10);silent=levels.filter(x=>x<threshold).length/Math.max(1,levels.length);
+  const dynamic=p90/Math.max(.0001,p10),crest=peak/Math.max(.0001,rms),energy=clamp01(rms/.18);
+  let clipped=0;for(const x of levels)if(x>=.985)clipped++;
+  const headroom=Math.max(0,1-clipped/Math.max(1,levels.length)*18);
+  return {rms,peak,energy,headroom,silence:silent,dynamic,crest,active:active/Math.max(1,count)};
+}
+function scoreMetrics(m,profile){
+  const dynamicNorm=clamp01(Math.log10(1+m.dynamic)/1.8);
+  const clean=100*(.38*m.energy+.28*m.headroom+.20*(1-m.silence)+.14*(1-Math.min(1,Math.abs(m.crest-3)/3)));
+  const hard=100*(.46*m.energy+.24*Math.min(1,m.crest/5)+.18*(1-m.silence)+.12*m.headroom);
+  const real=100*(.30*m.energy+.30*dynamicNorm+.22*(1-m.silence)+.18*m.headroom);
+  return Math.round(profile==='Hard'?hard:profile==='Real'?real:clean);
+}
+function profileScoreSet(m){return {Clean:scoreMetrics(m,'Clean'),Hard:scoreMetrics(m,'Hard'),Real:scoreMetrics(m,'Real')}}
+function beastScoreSet(s){return Math.round((s.Clean+s.Hard+s.Real)/3)}
+function escapeAttr(s){return escapeHtml(s).replace(/`/g,'&#96;')}
+function takePool(){
+  if(selectedCandidateIndices.size){return [...selectedCandidateIndices].map(i=>analysisResults[i]).filter(Boolean)}
+  return analysisResults.slice();
+}
+function renderCandidates(){
+  const box=$('candidates');
+  if(!analysisResults.length){box.innerHTML='<div class="muted">No analysed candidates yet.</div>';return}
+  const activeProfile=document.querySelector('#profileChoices .profile.active')?.dataset.profile||'Clean';
+  const hero=activeProfile==='Beast'?`<div class="result-hero"><h4>THE HEART OF THE BEAST. 🐺</h4><p>I checked Clean, Hard and Real together. Pick multiple takes below — I’ll search across them and build <b>one master performance</b>.</p><span class="result-pill">ONE MASTER VISION</span></div>`:`<div class="result-hero"><h4>HERE’S WHAT STOOD OUT. 🎯</h4><p>I measured your takes against <b>${activeProfile}</b>. Pick one or more takes as your build pool.</p><span class="result-pill">${activeProfile.toUpperCase()} DIRECTION</span></div>`;
+  box.innerHTML=hero+analysisResults.map((t,i)=>{
+    const selected=selectedCandidateIndices.has(i);
+    const preview=t.url?(t.mediaType==='video'?`<video class="media-preview" controls playsinline preload="metadata" src="${t.url}"></video>`:`<audio class="audio" controls preload="metadata" src="${t.url}"></audio>`):'';
+    const scores=`<br><small>Clean ${t.profileScores.Clean} · Hard ${t.profileScores.Hard} · Real ${t.profileScores.Real} · Beast ${t.beastScore}</small>`;
+    return `<div class="take candidate ${selected?'selected':''}"><div class="candidate-body"><b>${escapeHtml(t.name)}</b><br><small>#${i+1} · ${activeProfile==='Beast'?'Beast '+t.beastScore:t.profileScores[activeProfile]+' / 100'} · ${fmtSec(t.duration)}</small>${scores}${preview}<div class="candidate-actions"><button class="mini-btn select" data-pick="${i}">${selected?'In build pool':'Add to build pool'}</button></div></div><span class="tag" style="color:#5a1723;border-color:#c9c1b5">Measured</span></div>`;
+  }).join('')+`<div class="muted" style="margin-top:9px">${selectedCandidateIndices.size?selectedCandidateIndices.size+' take'+(selectedCandidateIndices.size>1?'s':'')+' selected for the build pool.':'No pool selected — ARC will use all analysed takes.'}</div>`;
+  box.querySelectorAll('[data-pick]').forEach(btn=>btn.onclick=()=>toggleCandidate(Number(btn.dataset.pick)));
+  const enabled=analysisResults.length>0&&(activeProfile==='Beast'||selectedCandidateIndices.size>0||analysisResults.length>0);
+  document.querySelectorAll('#buildCard .build button').forEach(b=>b.disabled=!enabled);
+  updateOverrideRows();
+}
+function toggleCandidate(i){
+  if(selectedCandidateIndices.has(i))selectedCandidateIndices.delete(i);else selectedCandidateIndices.add(i);
+  selectedCandidateIndex=selectedCandidateIndices.size?[...selectedCandidateIndices][0]:null;
+  renderCandidates();
+  $('analysisState').textContent=selectedCandidateIndices.size?`${selectedCandidateIndices.size} take${selectedCandidateIndices.size>1?'s':''} in the build pool — your call.`:'Using all analysed takes as the build pool.';
+}
+function selectCandidate(i){toggleCandidate(i)}
+async function analyseOne(t,profile){
+  const id=t.id||Math.random().toString(36).slice(2); t.id=id; const buffer=await decodeTakeAudio(t); decodedBuffers[id]=buffer;
+  const m=measureBuffer(buffer), scores=profileScoreSet(m), beast=beastScoreSet(scores);
+  return {...t,id,duration:buffer.duration,metrics:m,profileScores:scores,beastScore:beast,score:profile==='Beast'?beast:scores[profile],windowStart:0,windowDuration:Math.min(8,buffer.duration)};
+}
+function buildSectionPlan(pool,profile){
+  if(!pool.length)return [];
+  const durations=pool.map(t=>t.duration).filter(Number.isFinite).sort((a,b)=>a-b);
+  const median=durations[Math.floor(durations.length/2)]||8;
+  const sectionCount=Math.max(4,Math.min(24,Math.round(median/6)));
+  const plan=[];
+  for(let i=0;i<sectionCount;i++){
+    const f0=i/sectionCount,f1=(i+1)/sectionCount;
+    const candidates=pool.map(t=>{
+      const start=f0*t.duration,dur=Math.max(.35,(f1-f0)*t.duration),m=segmentMetrics(decodedBuffers[t.id],start,dur),scores=profileScoreSet(m),beast=beastScoreSet(scores);
+      return {take:t,start,dur,metrics:m,scores,score:profile==='Beast'?beast:scores[profile],beastScore:beast};
+    }).sort((a,b)=>b.score-a.score);
+    plan.push({section:i+1,from:f0,to:f1,choices:candidates,winner:candidates[0]});
+  }
+  return plan;
+}
+function renderCompPlan(plan,profile){
+  if(!plan.length)return '<div class="muted">No sections available yet.</div>';
+  return `<div class="comp-plan"><b>${profile==='Beast'?'BEAST MODE · ONE MASTER':'ARC '+profile.toUpperCase()+' COMP'}</b><small>${plan.length} sections · ARC chooses one real recorded segment per section.</small>${plan.map(p=>`<div class="comp-row"><span>Section ${String(p.section).padStart(2,'0')}</span><strong>${escapeHtml(p.winner.take.name)}</strong><span>${fmtSec(p.winner.start)}–${fmtSec(p.winner.start+p.winner.dur)} · ${p.winner.score}/100</span></div>`).join('')}</div>`;
+}
+function renderBuildOutputPlaceholder(){ $('buildOutput').innerHTML=''; }
+function audioBufferToWav(buffer){
+  const channels=Math.max(1,Math.min(2,buffer.numberOfChannels));
+  const sampleRate=buffer.sampleRate||48000;
+  const length=buffer.length;
+  const bytesPerSample=2;
+  const blockAlign=channels*bytesPerSample;
+  const dataSize=length*blockAlign;
+  const out=new ArrayBuffer(44+dataSize);
+  const view=new DataView(out);
+  const write=(o,str)=>{for(let i=0;i<str.length;i++)view.setUint8(o+i,str.charCodeAt(i))};
+  write(0,'RIFF');view.setUint32(4,36+dataSize,true);write(8,'WAVE');
+  write(12,'fmt ');view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,channels,true);
+  view.setUint32(24,sampleRate,true);view.setUint32(28,sampleRate*blockAlign,true);view.setUint16(32,blockAlign,true);view.setUint16(34,16,true);
+  write(36,'data');view.setUint32(40,dataSize,true);
+  const ch=[];for(let c=0;c<channels;c++)ch.push(buffer.getChannelData(c));
+  let o=44;
+  for(let i=0;i<length;i++)for(let c=0;c<channels;c++){
+    const x=Math.max(-1,Math.min(1,ch[c][i]||0));
+    view.setInt16(o,x<0?x*32768:x*32767,true);o+=2;
+  }
+  return new Blob([out],{type:'audio/wav'});
+}
+function stitchPlan(plan,xf=.06){
+  // Robust browser-safe renderer: do not depend on OfflineAudioContext.
+  // Each winning section is copied into one new mono PCM buffer with short fades.
+  const usable=plan.filter(p=>p&&p.winner&&decodedBuffers[p.winner.take.id]);
+  if(!usable.length) throw new Error('No usable analysed sections.');
+  const sr=48000;
+  const fadeSec=Math.max(0,Math.min(.08,Number(xf)||0));
+  const fade=Math.floor(fadeSec*sr);
+  const sections=usable.map(p=>{
+    const w=p.winner,b=decodedBuffers[w.take.id];
+    if(!b) throw new Error('Missing decoded recording: '+(w.take.name||'take'));
+    const src=b.getChannelData(0);
+    const start=Math.max(0,Math.min(src.length,Math.floor(w.start*b.sampleRate)));
+    const count=Math.max(1,Math.min(src.length-start,Math.floor(w.dur*b.sampleRate)));
+    return {src,start,count,rate:b.sampleRate};
+  });
+  const overlap=Math.min(fade,Math.floor(Math.min(...sections.map(x=>x.count))/4));
+  const total=Math.max(1,sections.reduce((n,x)=>n+Math.max(1,Math.round(x.count*sr/x.rate)),0)-overlap*Math.max(0,sections.length-1));
+  const out=new Float32Array(total);
+  let cursor=0;
+  for(let si=0;si<sections.length;si++){
+    const x=sections[si];
+    const outCount=Math.max(1,Math.round(x.count*sr/x.rate));
+    const pos=cursor;
+    for(let i=0;i<outCount && pos+i<out.length;i++){
+      const sourcePos=x.start+(i*x.rate/sr);
+      const a=Math.floor(sourcePos), frac=sourcePos-a;
+      const s0=x.src[Math.min(x.src.length-1,a)]||0;
+      const s1=x.src[Math.min(x.src.length-1,a+1)]||s0;
+      let v=s0+(s1-s0)*frac;
+      if(overlap>0){
+        if(si>0 && i<overlap) v*=i/overlap;
+        if(si<sections.length-1 && i>=outCount-overlap) v*=Math.max(0,(outCount-1-i)/overlap);
+      }
+      const idx=pos+i;
+      // During an overlap, add rather than replace so adjacent sections crossfade cleanly.
+      out[idx]+=v;
+    }
+    cursor += outCount-overlap;
+  }
+  // Prevent a hot stitched sample from clipping the exported PCM.
+  let peak=0;for(const v of out)peak=Math.max(peak,Math.abs(v));
+  const gain=peak>0.98?.98/peak:1;
+  if(gain!==1)for(let i=0;i<out.length;i++)out[i]*=gain;
+  const wavBuffer={numberOfChannels:1,sampleRate:sr,length:out.length,getChannelData:()=>out};
+  return Promise.resolve(audioBufferToWav(wavBuffer));
+}
+async function decodeBlobAudio(blob){
+  const AudioCtx=window.AudioContext||window.webkitAudioContext;
+  if(!AudioCtx)throw new Error('This browser has no Web Audio decoder.');
+  const bytes=await blob.arrayBuffer();
+  const ctx=new AudioCtx();
+  try{return await ctx.decodeAudioData(bytes.slice(0));}
+  finally{try{await ctx.close()}catch(e){}}
+}
+async function loadInstrumental(blob){
+  // V2.52: selecting the file is never gated by Web Audio decoding.
+  // The uploaded File/Blob is the source of truth. Native HTML audio is the
+  // fallback, while Web Audio decoding is an optional path for PCM mixing.
+  if(!blob) throw new Error('No instrumental file selected.');
+  const name=String(blob.name||'instrumental').toLowerCase();
+  const type=String(blob.type||'').toLowerCase();
+  const extOK=/\.(mp3|m4a|aac|wav|ogg|oga|webm|mp4)$/i.test(name);
+  if(!extOK && !type.startsWith('audio/')) throw new Error('Please choose an audio instrumental (WAV, MP3, M4A, AAC, OGG or WebM).');
+  let mime=type;
+  if(!mime||mime==='application/octet-stream'){
+    if(name.endsWith('.mp3'))mime='audio/mpeg';
+    else if(name.endsWith('.m4a')||name.endsWith('.aac')||name.endsWith('.mp4'))mime='audio/mp4';
+    else if(name.endsWith('.wav'))mime='audio/wav';
+    else if(name.endsWith('.ogg')||name.endsWith('.oga'))mime='audio/ogg';
+    else if(name.endsWith('.webm'))mime='audio/webm';
+  }
+  let src='';
+  try{src=URL.createObjectURL(blob)}catch(e){throw new Error('This browser could not create a local audio source. Please open ARC from the HTTPS site and try again.');}
+  const el=document.createElement('audio');
+  el.preload='auto'; el.src=src; el.playsInline=true; el.controls=false;
+  el.setAttribute('aria-label','ARC instrumental preview');
+  el.style.position='fixed';el.style.left='-10000px';el.style.top='0';el.style.width='1px';el.style.height='1px';el.style.opacity='0.01';el.style.pointerEvents='none';
+  document.body.appendChild(el);
+  try{el.load()}catch(e){}
+  // Do not wait for duration and do not reject if Web Audio cannot decode.
+  // Android Chrome can still natively play a perfectly valid MP3 in that case.
+  let buffer=null,decodeError='';
+  try{buffer=await decodeBlobAudio(blob)}catch(e){decodeError=e?.message||String(e)}
+  return {buffer,element:el,fallback:!buffer,url:src,sourceBlob:blob,mime:mime||'audio/*',decodeError};
+}
+
+async function mixWithMediaElement(vocalBlob,beatEl,vocalGain=1,beatGain=.45,bpm=125){
+  const AudioCtx=window.AudioContext||window.webkitAudioContext;
+  if(!AudioCtx)throw new Error('Web Audio is not available in this browser.');
+  if(!beatEl)throw new Error('No instrumental loaded.');
+  const ctx=new AudioCtx();
+  const dest=ctx.createMediaStreamDestination();
+  const vocalEl=document.createElement('audio');
+  const vocalUrl=URL.createObjectURL(vocalBlob);
+  vocalEl.preload='auto'; vocalEl.src=vocalUrl; vocalEl.playsInline=true;
+  document.body.appendChild(vocalEl);
+  const vg=ctx.createGain(),bg=ctx.createGain(); vg.gain.value=vocalGain; bg.gain.value=beatGain;
+  const vs=ctx.createMediaElementSource(vocalEl),bs=ctx.createMediaElementSource(beatEl);
+  vs.connect(vg).connect(dest); bs.connect(bg).connect(dest);
+  if(!window.MediaRecorder)throw new Error('This browser cannot export a live mix.');
+  const mime=MediaRecorder.isTypeSupported('audio/webm;codecs=opus')?'audio/webm;codecs=opus':'audio/webm';
+  const rec=new MediaRecorder(dest.stream,{mimeType:mime});
+  const chunks=[]; rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
+  await ctx.resume();
+  try{vocalEl.currentTime=0}catch(e){}
+  try{beatEl.currentTime=0}catch(e){}
+
+  // Start recording first, then start both media elements. We don't require
+  // duration metadata; we wait for both sources to finish/stop naturally.
+  rec.start(250);
+  let ended=0, settled=false;
+  const finish=()=>{
+    if(settled)return; settled=true;
+    try{beatEl.pause()}catch(e){} try{vocalEl.pause()}catch(e){}
+    try{rec.stop()}catch(e){}
+  };
+  const onEnd=()=>{ended++; if(ended>=2)finish()};
+  beatEl.addEventListener('ended',onEnd,{once:true}); vocalEl.addEventListener('ended',onEnd,{once:true});
+  const beatErr=()=>{if(!settled)finish()};
+  const vocalErr=()=>{if(!settled)finish()};
+  beatEl.addEventListener('error',beatErr,{once:true}); vocalEl.addEventListener('error',vocalErr,{once:true});
+  let maxMs=0;
+  const waitForDuration=()=>{
+    const d1=Number.isFinite(beatEl.duration)?beatEl.duration:0;
+    const d2=Number.isFinite(vocalEl.duration)?vocalEl.duration:0;
+    maxMs=Math.min(15*60*1000,Math.max(10000,(Math.max(d1,d2)+1)*1000));
+    setTimeout(()=>{if(!settled)finish()},maxMs);
+  };
+  try{
+    const waitReady=(el)=>new Promise((resolve,reject)=>{if(el.readyState>=2)return resolve();const ok=()=>{cleanup();resolve()};const bad=()=>{cleanup();reject(new Error('Instrumental playback could not be prepared.'))};const cleanup=()=>{el.removeEventListener('canplay',ok);el.removeEventListener('loadeddata',ok);el.removeEventListener('error',bad)};el.addEventListener('canplay',ok,{once:true});el.addEventListener('loadeddata',ok,{once:true});el.addEventListener('error',bad,{once:true});setTimeout(()=>{cleanup();el.readyState>=2?resolve():reject(new Error('Instrumental took too long to become playable.'))},8000)});
+    await Promise.all([waitReady(beatEl),waitReady(vocalEl)]);
+    await Promise.all([beatEl.play(),vocalEl.play()]);
+  }catch(e){
+    try{rec.stop()}catch(_){ }
+    throw new Error('The browser could not play the instrumental. Try opening the same MP3 in your phone music player first, then return to ARC.');
+  }
+  waitForDuration();
+  await new Promise(resolve=>rec.addEventListener('stop',resolve,{once:true}));
+  try{await ctx.close()}catch(e){}
+  try{URL.revokeObjectURL(vocalUrl)}catch(e){}
+  try{vocalEl.remove()}catch(e){}
+  if(!chunks.length)throw new Error('The browser produced no mixed audio.');
+  return new Blob(chunks,{type:mime});
+}
+
+function detectBeatStart(buffer,bpm=125){
+  // Lightweight beat-aware start detection: find the first strong onset
+  // near the beginning, then prefer a nearby BPM grid position.
+  const ch=buffer.getChannelData(0), sr=buffer.sampleRate||48000;
+  const hop=1024, win=2048, maxSec=Math.min(12,buffer.duration||12);
+  let prev=0, best=-1, bestFlux=0;
+  for(let i=0;i<Math.floor(maxSec*sr);i+=hop){
+    let sum=0, n=0;
+    for(let j=0;j<win && i+j<ch.length;j+=4){const v=ch[i+j]||0;sum+=v*v;n++;}
+    const rms=Math.sqrt(sum/Math.max(1,n));
+    const flux=Math.max(0,rms-prev); prev=rms;
+    if(i>Math.floor(.05*sr) && flux>bestFlux){bestFlux=flux;best=i;}
+  }
+  if(best<0)return 0;
+  const beatSec=60/(Number.isFinite(bpm)&&bpm>0?bpm:125);
+  const raw=best/sr;
+  return Math.max(0,Math.round(raw/beatSec)*beatSec);
+}
+function mixVocalWithBeat(vocalBuffer,beatBuffer,vocalGain=1,beatGain=.82,options={}){
+  if(!vocalBuffer||!beatBuffer)throw new Error('Load an instrumental first.');
+  const sr=48000;
+  const bpm=Number(options.bpm)||125;
+  const beatSec=60/bpm;
+  const autoStart=detectBeatStart(beatBuffer,bpm);
+  const startSec=Number.isFinite(options.startSec)?Math.max(0,options.startSec):autoStart;
+  const vocalStart=Math.round(startSec*sr);
+  const duration=Math.max(beatBuffer.duration, startSec+vocalBuffer.duration);
+  const total=Math.max(1,Math.ceil(duration*sr));
+  const channels=Math.max(1,Math.min(2,beatBuffer.numberOfChannels));
+  const out=[];for(let c=0;c<channels;c++)out.push(new Float32Array(total));
+  const read=(b,c,i)=>{
+    const ch=b.getChannelData(Math.min(c,b.numberOfChannels-1));
+    const pos=i*b.sampleRate/sr,a=Math.floor(pos),f=pos-a;
+    if(a<0||a>=ch.length)return 0;
+    const s0=ch[a]||0,s1=ch[Math.min(ch.length-1,a+1)]||s0;
+    return s0+(s1-s0)*f;
+  };
+  for(let i=0;i<total;i++){
+    const vi=i-vocalStart;
+    for(let c=0;c<channels;c++){
+      let v=read(beatBuffer,c,i)*beatGain;
+      if(vi>=0 && vi<Math.ceil(vocalBuffer.duration*sr))v+=read(vocalBuffer,0,vi)*vocalGain;
+      out[c][i]=v;
+    }
+  }
+  let peak=0;for(const ch of out)for(const v of ch)peak=Math.max(peak,Math.abs(v));
+  const gain=peak>.98?.98/peak:1;if(gain!==1)for(const ch of out)for(let i=0;i<ch.length;i++)ch[i]*=gain;
+  return {numberOfChannels:channels,sampleRate:sr,length:total,getChannelData:c=>out[c],_vocalStart:startSec,_bpm:bpm};
+}
+function beatActionHtml(){
+  if(!(instrumentalBuffer||window.arcBeatElement)||!latestVocalBlob)return '';
+  return `<div class="beat-build"><b>🥁 FULL TRACK</b><p class="muted">ARC keeps the beat intact and places your finished vocal master on its timing grid. Adjust the two volume controls above before building.</p><button class="btn gold" id="buildFullTrackBtn">Build full track</button><div id="beatBuildStatus" class="muted" style="margin-top:7px"></div></div>`;
+}
+async function buildFullTrackWithBeat(){
+  if(!(instrumentalBuffer||window.arcBeatElement)||!latestVocalBlob)return;
+  const status=$('beatBuildStatus'); if(status) status.textContent='Finding the pocket…';
+  try{
+    const vocal=await decodeBlobAudio(latestVocalBlob);
+    const raw=parseFloat(($('bpmInput').value||'').replace(/[^0-9.]/g,''));
+    const bpm=Number.isFinite(raw)&&raw>0?raw:125;
+    const vg=Math.max(0,Math.min(1.5,Number($('vocalGainInput')?.value)||1));
+    const bg=Math.max(0,Math.min(1,Number($('beatGainInput')?.value)||0.45));
+    let blob,url,message,filename;
+    if(instrumentalBuffer){
+      const mixed=mixVocalWithBeat(vocal,instrumentalBuffer,vg,bg,{bpm});
+      blob=audioBufferToWav(mixed);
+      url=URL.createObjectURL(blob);
+      message=`Vocal placed at approximately <b>${fmtSec(mixed._vocalStart)}</b> on the ${bpm} BPM grid. The instrumental was not stretched or changed.`;
+      filename='ARC_FULL_TRACK.wav';
+    }else if(window.arcBeatElement){
+      blob=await mixWithMediaElement(latestVocalBlob,window.arcBeatElement,vg,bg,bpm);
+      url=URL.createObjectURL(blob);
+      message='The browser mixed your vocal master with the instrumental using its built-in playback path.';
+      filename='ARC_FULL_TRACK.webm';
+    }else{
+      throw new Error('No instrumental loaded.');
+    }
+    const area=document.querySelector('.beat-build');
+    if(area) area.innerHTML=`<b>🎧 FULL ARC TRACK READY</b><p class="muted" style="margin:5px 0 9px">${message}</p><audio class="audio" controls src="${url}"></audio><div style="margin-top:9px"><a class="mini-btn" style="display:inline-block;text-decoration:none" href="${url}" download="${filename}">Save full track</a></div>`;
+  }catch(e){
+    console.error('ARC BEAT MIX ERROR',e);
+    if(status) status.textContent='Beat mix failed: '+(e?.message||String(e));
+  }
+}
+function attachBeatAction(){
+  const b=$('buildFullTrackBtn');if(b)b.onclick=buildFullTrackWithBeat;
+}
+function renderGridPreview(){
+  const raw=parseFloat(($('bpmInput').value||'').replace(/[^0-9.]/g,'')); const bpm=Number.isFinite(raw)&&raw>0?raw:125; const beats=Number($('beatLength').value)||8; const beatSec=60/bpm;
+  const beatNote=(instrumentalBuffer||window.arcBeatElement)?`<div style="margin-top:6px"><b>Instrumental loaded.</b> Build a vocal master first, then ARC can put that master over this beat.</div>`:'<div style="margin-top:6px">No instrumental loaded. This grid is only a timing reference.</div>';
+  $('gridPreview').innerHTML=`<b>${bpm} BPM · ${beats} beats</b><div class="muted">One beat = ${beatSec.toFixed(3)} seconds. ${(instrumentalBuffer||window.arcBeatElement)?'The beat is loaded and can be used as the instrumental bed. ARC can build the vocal + beat track.':'Upload an instrumental to let ARC build a vocal + beat track.'}</div>${beatNote}<div class="grid-bars">${Array.from({length:beats},(_,i)=>`<span>${i+1}</span>`).join('')}</div>`; $('gridPreview').classList.add('show'); if($('beatActionArea')){$('beatActionArea').innerHTML=beatActionHtml();attachBeatAction();}
+}
+async function buildProfile(profile){
+  if(!analysisResults.length){$('buildOutput').innerHTML='<div class="output"><h4>Add and analyse some takes first.</h4></div>';return;}
+  const pool=takePool(); if(!pool.length)return;
+  const label=profile==='Beast'?'THE HEART OF THE BEAST':'ARC '+profile.toUpperCase()+' BUILD';
+  $('buildOutput').innerHTML=`<div class="output"><h4>${label}</h4><p>Let me do my thing — I’m comparing the selected real recordings section by section. No synthetic voice is added.</p><div class="muted">Building…</div></div>`;
+  $('buildCard').scrollIntoView({behavior:'smooth',block:'center'});$('analysisState').textContent=profile==='Beast'?'Finding the heart of the beast…':'Building the strongest '+profile+' version…';
+  await new Promise(r=>setTimeout(r,30));
+  try{const plan=buildSectionPlan(pool,profile);compSections=plan;const blob=await stitchPlan(plan,.06),url=URL.createObjectURL(blob);latestVocalBlob=blob;latestVocalLabel=profile==='Beast'?'THE HEART OF THE BEAST':'ARC '+profile.toUpperCase()+' MASTER';const title=profile==='Beast'?'THE HEART OF THE BEAST':'ARC '+profile.toUpperCase()+' MASTER';const note=profile==='Beast'?'One master assembled from Clean + Hard + Real strengths across your selected recordings.':'One assembled performance built from the strongest measured '+profile+' sections in your selected recordings.';$('buildOutput').innerHTML=`<div class="master-card"><h4>${profile==='Beast'?'🐺 ':''}${title}</h4><p>${note}</p><audio class="audio" controls src="${url}"></audio>${renderCompPlan(plan,profile)}<div style="margin-top:10px"><a class="mini-btn" style="display:inline-block;text-decoration:none" href="${url}" download="${profile==='Beast'?'ARC_BEAST_MASTER':'ARC_'+profile.toUpperCase()+'_MASTER'}.wav">Save this build</a></div><div class="muted" style="margin-top:8px">Acoustic comp prototype: section choices are based on recorded signal characteristics. Word-level matching is only claimed when verified timestamps are supplied.</div>${beatActionHtml()}</div>`;$('analysisState').textContent=profile==='Beast'?'Master built — listen to the heart of the beast.':'Build ready — listen and decide.';}catch(e){console.error('ARC BUILD ERROR',e);$('buildOutput').innerHTML=`<div class="output"><h4>I hit a build problem.</h4><p>${escapeHtml(e?.message||String(e))}</p><p class="muted">Nothing was changed in your original recordings. Run Analyse again if you changed the build pool.</p></div>`;$('analysisState').textContent='Build failed.';}
+}
+let artistOverrides={};
+function updateOverrideRows(){
+  const box=$('overrideRows'); if(!box)return;
+  const custom=$('customBuildArea');
+  if(!analysisResults.length){
+    box.innerHTML='<div class="muted" style="margin-top:9px;color:#aaa39b">Analyse takes first and your available takes will appear here.</div>';
+    if(custom)custom.innerHTML='';
+    return;
+  }
+  const sections=['Intro','Verse 1','Hook','Verse 2','Outro'];
+  const opts=analysisResults.map((t,i)=>`<option value="${i}">Take ${i+1} — ${escapeHtml(t.name)}</option>`).join('');
+  box.innerHTML=sections.map((section,i)=>{
+    const selected=Number.isInteger(artistOverrides[i])?artistOverrides[i]:0;
+    return `<div class="override-row"><span class="tag">${section}</span><select data-section-index="${i}" data-section="${section}">${opts}</select></div>`;
+  }).join('')+
+  '<button class="btn gold" id="applyOverrides" style="margin-top:10px">Use these choices</button>'+
+  '<div id="overrideStatus" class="muted" style="margin-top:8px;color:#c9c2ba"></div>';
+  sections.forEach((_,i)=>{
+    const sel=box.querySelector(`select[data-section-index="${i}"]`);
+    if(sel)sel.value=String(Number.isInteger(artistOverrides[i])?artistOverrides[i]:0);
+  });
+  $('applyOverrides').onclick=()=>{
+    box.querySelectorAll('select[data-section-index]').forEach(sel=>{
+      artistOverrides[Number(sel.dataset.sectionIndex)]=Number(sel.value);
+    });
+    $('overrideStatus').textContent='Choices saved. Now build your custom version.';
+    if(custom)custom.innerHTML='<button class="btn gold" id="buildCustomBtn">Create my custom track</button><div class="muted" style="margin-top:7px;color:#c9c2ba">ARC will use your five section choices and leave the original recordings untouched.</div>';
+    $('buildCustomBtn').onclick=()=>buildCustomProfile();
+  };
+}
+function settleScrollTo(el,offset=90){
+  if(!el)return;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    const y=el.getBoundingClientRect().top+window.scrollY-offset;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+  }));
+}
+async function buildCustomProfile(){
+  if(!analysisResults.length){$('overrideStatus').textContent='Analyse takes first.';return;}
+  const sections=['Intro','Verse 1','Hook','Verse 2','Outro'];
+  const plan=sections.map((name,i)=>{
+    const idx=Number.isInteger(artistOverrides[i])?artistOverrides[i]:0;
+    const t=analysisResults[idx];
+    if(!t||!decodedBuffers[t.id])throw new Error('Take '+(idx+1)+' is not available for '+name+'. Run Analyse again.');
+    const f0=i/sections.length,f1=(i+1)/sections.length;
+    const start=f0*t.duration,dur=Math.max(.35,(f1-f0)*t.duration);
+    const m=segmentMetrics(decodedBuffers[t.id],start,dur);
+    const scores=profileScoreSet(m);
+    return {section:i+1,label:name,from:f0,to:f1,choices:[],winner:{take:t,start,dur,metrics:m,scores,score:scores.Real,beastScore:beastScoreSet(scores)}};
+  });
+  compSections=plan;
+  $('buildOutput').innerHTML='<div class="output"><h4>YOUR CUSTOM ARC MASTER</h4><p>Alright, I’ve got this. Building exactly the sections you picked.</p><div class="muted">Building…</div></div>';
+  try{
+    const blob=await stitchPlan(plan,.06),url=URL.createObjectURL(blob);latestVocalBlob=blob;latestVocalLabel='YOUR CUSTOM ARC MASTER';
+    $('buildOutput').innerHTML=`<div class="master-card"><h4>🫵🏾 YOUR CUSTOM ARC MASTER</h4><p>Your artist-led section choices, assembled from your real recordings.</p><audio class="audio" controls src="${url}"></audio>${renderCompPlan(plan,'Custom')}<div style="margin-top:10px"><a class="mini-btn" style="display:inline-block;text-decoration:none" href="${url}" download="ARC_CUSTOM_MASTER.wav">Save custom build</a></div><div class="muted" style="margin-top:8px">Artist override build: each section uses the take you selected. No synthetic voice is added.</div>${beatActionHtml()}</div>`;
+    $('analysisState').textContent='Custom master built — your choices are in.';
+    settleScrollTo(document.querySelector('#buildOutput .master-card'),115);
+  }catch(e){
+    console.error('ARC CUSTOM BUILD ERROR',e);
+    $('buildOutput').innerHTML=`<div class="output"><h4>Custom build hit a problem.</h4><p>${escapeHtml(e?.message||String(e))}</p></div>`;
+    $('analysisState').textContent='Custom build failed.';
+  }
+}
+async function runRealAnalysis(){
+  if(!takes.length)return;
+  const profile=document.querySelector('#profileChoices .profile.active')?.dataset.profile||'Clean';
+  $('analysisState').textContent=profile==='Beast'?'Let me look across all three — one master vision…':'Let me listen properly — '+profile+' profile…';$('analyseBtn').disabled=true;
+  const results=[],errors=[];decodedBuffers={};
+  for(let i=0;i<takes.length;i++){const t={...takes[i],id:takes[i].id||`take_${i}_${Date.now()}`};takes[i].id=t.id;try{results.push(await analyseOne(t,profile))}catch(e){console.warn(e);errors.push(t.name)}}
+  results.sort((a,b)=>b.score-a.score); analysisResults=results; selectedCandidateIndices=new Set(); selectedCandidateIndex=null; compSections=[]; artistOverrides={};
+  $('analysisState').textContent=results.length?`Analysis complete · ${results.length} take${results.length>1?'s':''} measured`:'Couldn’t decode these takes';
+  renderCandidates(); renderBuildOutputPlaceholder(); const cf=$('chooseFold'); if(cf)cf.open=true; $('analyseBtn').disabled=false;
+  if(errors.length)$('candidates').insertAdjacentHTML('beforeend',`<div class="muted" style="margin-top:8px">${errors.length} take${errors.length>1?'s':''} could not be decoded and was skipped.</div>`);
+}
+async function requestMicPermission(mode){
+  const box=$('micPermission'); const state=$('micState'); const text=$('micPermissionText');
+  text.textContent=mode==='video'?'Alright, before we roll — I need permission to use your microphone and camera for video.':'Alright, before we cook — I need permission to use your microphone for recording.';
+  state.textContent='Microphone is waiting.'; state.className='mic-state'; box.classList.add('show');
+  return new Promise(resolve=>{
+    const cleanup=()=>{box.classList.remove('show');$('micAllowBtn').onclick=null;$('micCancelBtn').onclick=null};
+    $('micCancelBtn').onclick=()=>{cleanup();resolve(false)};
+    $('micAllowBtn').onclick=async()=>{
+      try{
+        state.textContent=mode==='video'?'Asking for mic + camera…':'Asking for microphone…';
+        const constraints=mode==='video'?{audio:true,video:{facingMode:'user'}}:{audio:true};
+        const test=await navigator.mediaDevices.getUserMedia(constraints);
+        test.getTracks().forEach(t=>t.stop());
+        state.textContent='Yep — permission granted. Let’s go.'; state.className='mic-state ready';
+        setTimeout(()=>{cleanup();resolve(true)},350);
+      }catch(e){
+        state.textContent=e&&e.name==='NotAllowedError'?'No worries — the mic is blocked. Tap Allow in your browser/site settings, then try again.':'I couldn’t access the mic yet. Check your browser permissions and try again.';
+        state.className='mic-state off';
+      }
+    };
+  });
+}
+async function startRecording(mode){if(recording)return;recordMode=mode;
+  if(!window.isSecureContext){$('recordStatus').textContent='Nearly there — the mic needs ARC to be opened from a secure web address (https).';return}
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){$('recordStatus').textContent='This browser can’t access the microphone here. Try opening ARC from a secure site.';return}
+  const ok=await requestMicPermission(mode); if(!ok){$('recordStatus').textContent='All good — mic is off. You can upload instead.';return}
+  try{const constraints=mode==='video'?{audio:true,video:{facingMode:'user'}}:{audio:true};stream=await navigator.mediaDevices.getUserMedia(constraints);let options={};if(MediaRecorder.isTypeSupported(mode==='video'?'video/webm;codecs=vp9,opus':'audio/webm;codecs=opus'))options.mimeType=mode==='video'?'video/webm;codecs=vp9,opus':'audio/webm;codecs=opus';recorder=new MediaRecorder(stream,options);const chunks=[];recorder.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};recorder.onstop=()=>{const blob=new Blob(chunks,{type:recorder.mimeType|| (mode==='video'?'video/webm':'audio/webm')});const url=URL.createObjectURL(blob);const num=takes.length+1;takes.push({name:mode==='video'?`ARC Video ${num}`:`ARC Vocal ${num}`,size:(blob.size/1024).toFixed(0)+' KB',url,mediaType:mode,source:'recorded'});renderTakes();updateReady();$('recordStatus').textContent=mode==='video'?'Got it. Video is right there.':'Got it. Nice one.';if(mode==='video'){const vids=document.querySelectorAll('#takes video');const v=vids[vids.length-1];if(v)v.play().catch(()=>{})}};recorder.start(250);recording=true;started=Date.now();$('recordBtn').textContent='Stop vocal';$('recordVideoBtn').textContent='Stop video';$('recordStatus').textContent=mode==='video'?'I’m watching…':'I’m listening…';timerHandle=setInterval(()=>{let sec=Math.floor((Date.now()-started)/1000);$('timer').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')},250)}catch(e){$('recordStatus').textContent=mode==='video'?'Camera/mic permission is off — check browser permissions and try again.':'Mic permission is off — check browser permissions and try again.'}}
+function stopRecording(){if(!recording||!recorder)return;recorder.stop();if(stream)stream.getTracks().forEach(t=>t.stop());recording=false;clearInterval(timerHandle);timerHandle=null;$('recordBtn').textContent='Record vocal';$('recordVideoBtn').textContent='Record video';$('timer').textContent='00:00'}
+$('recordBtn').onclick=()=>recording?(recordMode==='audio'?stopRecording():null):startRecording('audio');
+$('recordVideoBtn').onclick=()=>recording?(recordMode==='video'?stopRecording():null):startRecording('video');
+$('analyseBtn').onclick=runRealAnalysis;
+document.querySelectorAll('#profileChoices .profile').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('#profileChoices .profile').forEach(b=>{b.classList.remove('active');const st=b.querySelector('.profileState');st.textContent=b.dataset.profile==='Beast'?'Premium':'Choose'});btn.classList.add('active');btn.querySelector('.profileState').textContent='Selected';$('analysisState').textContent=btn.dataset.profile==='Beast'?'🐺 Beast Mode selected — one master vision':' '+btn.dataset.profile+' selected';}));
+document.querySelectorAll('#buildCard .build button').forEach(b=>b.addEventListener('click',()=>buildProfile(b.dataset.build||b.textContent.replace('Build ','').trim())));
+$('previewGridBtn').onclick=renderGridPreview;
+$('instrumentalInput').onchange=async()=>{
+  const f=$('instrumentalInput').files?.[0];
+  instrumentalFile=f||null; instrumentalBuffer=null; window.arcBeatElement=null;
+  if(!f){$('instrumentalState').textContent='Raw vocals only? Leave this empty.';return;}
+  // Immediate acceptance: the selected File is a valid beat source even before
+  // Chrome exposes metadata or Web Audio finishes decoding it.
+  $('instrumentalState').textContent=`✓ Beat selected: ${f.name} · preparing audio…`;
+  if($('beatSummaryState')) $('beatSummaryState').textContent='Beat selected ✓';
+  try{
+    const loaded=await loadInstrumental(f);
+    instrumentalBuffer=loaded.buffer;
+    window.arcBeatElement=loaded.element;
+    const dur=instrumentalBuffer?instrumentalBuffer.duration:(Number.isFinite(loaded.element?.duration)?loaded.element.duration:0);
+    const ch=instrumentalBuffer?(instrumentalBuffer.numberOfChannels===2?'stereo':'mono'):'native browser audio';
+    $('instrumentalState').textContent=`✓ Beat loaded: ${f.name}${dur?` · ${fmtSec(dur)}`:''} · ${ch}`;
+    if($('beatSummaryState')) $('beatSummaryState').textContent='Beat loaded ✓';
+    renderGridPreview();
+  }catch(e){
+    // A recognized audio File should not be thrown away because decode failed.
+    // Only a genuine source-creation failure reaches here.
+    instrumentalBuffer=null; window.arcBeatElement=null;
+    $('instrumentalState').textContent=`Beat upload failed: ${e?.message||String(e)}`;
+    if($('beatSummaryState')) $('beatSummaryState').textContent='Beat upload failed';
+    console.error('ARC INSTRUMENTAL ERROR',e);
+  }
+};
+document.addEventListener('click',e=>{if(e.target&&e.target.id==='buildFullTrackBtn')buildFullTrackWithBeat();});
+$('openOverrides').onclick=()=>{$('overridePanel').classList.toggle('show');updateOverrideRows();$('overridePanel').scrollIntoView({behavior:'smooth',block:'center'})};
+function syncMixLabels(){const vg=Math.round((Number($('vocalGainInput')?.value)||1)*100);const bg=Math.round((Number($('beatGainInput')?.value)||.45)*100);if($('vocalGainOut'))$('vocalGainOut').textContent=vg+'%';if($('beatGainOut'))$('beatGainOut').textContent=bg+'%';}
+$('vocalGainInput')?.addEventListener('input',syncMixLabels);$('beatGainInput')?.addEventListener('input',syncMixLabels);syncMixLabels();
+$('saveBtn').onclick=()=>{const name=$('projectName').value.trim()||'Untitled ARC Project';$('projectName').value=name;$('saveState').textContent='Saved just now';localStorage.setItem('arcProjectName',name);$('saveConfirm').classList.add('show');setTimeout(()=>$('saveConfirm').classList.remove('show'),4200)};$('newBtn').onclick=()=>{if(takes.length){takes.forEach(revokeUrl)}takes=[];analysisResults=[];selectedCandidateIndex=null;artistOverrides={};instrumentalFile=null;instrumentalBuffer=null;window.arcBeatElement=null;latestVocalBlob=null;$('projectName').value='Untitled ARC Project';$('saveState').textContent='New project ready';$('saveConfirm').classList.add('show');$('saveConfirm').innerHTML='<b>New project ready.</b> Fresh session — nothing from the previous takes is carried over.';renderTakes();updateReady();$('candidates').innerHTML='<div class="muted">Add takes, then analyse them and I’ll bring the strong stuff forward.</div>';$('buildOutput').innerHTML='';document.querySelectorAll('#buildCard .build button').forEach(b=>b.disabled=true);setTimeout(()=>$('saveConfirm').classList.remove('show'),4200)};const saved=localStorage.getItem('arcProjectName');if(saved)$('projectName').value=saved;
+$('premiumBtn').onclick=()=>{$('overrideCard').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>{$('overridePanel').classList.add('show');updateOverrideRows();},250)};
+$('notNowBtn').onclick=()=>alert('Sweet. Keep cooking. Premium will still be here if you ever want it.');
+</script>
+<script>
+if('serviceWorker' in navigator && window.isSecureContext){navigator.serviceWorker.register('./sw.js?v=2.52',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{});}
+</script>
+</body></html>
