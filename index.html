@@ -593,7 +593,7 @@ function attachBeatAction(){
   const b=$('buildFullTrackBtn');if(b)b.onclick=buildFullTrackWithBeat;
 }
 function renderGridPreview(){
-  const raw=parseFloat(($('bpmInput').value||'').replace(/[^0-9.]/g,'')); const bpm=Number.isFinite(raw)&&raw>0?raw:125; const beats=Number($('beatLength').value)||8; const beatSec=60/bpm;
+  const raw=parseFloat(($('bpmInput').value||'').replace(/[^0-9.]/g,'')); const bpm=Number.isFinite(raw)&&raw>0?raw:125; const beats=8; const beatSec=60/bpm;
   const beatNote=(instrumentalBuffer||window.arcBeatElement)?`<div style="margin-top:6px"><b>Instrumental loaded.</b> Build a vocal master first, then ARC can put that master over this beat.</div>`:'<div style="margin-top:6px">No instrumental loaded. This grid is only a timing reference.</div>';
   $('gridPreview').innerHTML=`<b>${bpm} BPM · ${beats} beats</b><div class="muted">One beat = ${beatSec.toFixed(3)} seconds. ${(instrumentalBuffer||window.arcBeatElement)?'The beat is loaded and can be used as the instrumental bed. ARC can build the vocal + beat track.':'Upload an instrumental to let ARC build a vocal + beat track.'}</div>${beatNote}<div class="grid-bars">${Array.from({length:beats},(_,i)=>`<span>${i+1}</span>`).join('')}</div>`; $('gridPreview').classList.add('show'); if($('beatActionArea')){$('beatActionArea').innerHTML=beatActionHtml();attachBeatAction();}
 }
